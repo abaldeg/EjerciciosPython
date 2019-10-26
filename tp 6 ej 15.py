@@ -7,10 +7,16 @@
 M=[1,2,3,4,5]
 N=[100,200,300,400,500]
 l=[]
-
 largo=len(M)
+
 for i in range(largo):
-    l[i]=M[i]
-    l[i]=N[i]
+    l.append(M[i])
+    l.append(N[i])
+
+largo=len(l)
+for i in range(largo):
+    print(l[i],end=" ")
+    
+
 
 
