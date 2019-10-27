@@ -10,8 +10,6 @@
 # Intento 2: 5678 I correcto y I aproximado 
 # Intento 3: 9375 4 aproximados 
 
-
-
 import random
 
 def generarnumero():
@@ -30,6 +28,27 @@ def ordenarlista(listanombres,listaintentos):
                 listanombres[j]=aux2
     return 
 
+def busquedasecuencial (numero,numerousuario):
+    numerolista = [int(x) for x in str(numero)]
+    numerousuariolista = [int(x) for x in str(numerousuario)]
+    correcto=0
+    aprox=0    
+    i=0
+    u=0
+    
+    while u < len(numerousuariolista):
+        while i < len(numerolista) and numerolista[i]!=numerousuariolista[u]:            
+            i=i+1
+        if i < len(numerolista):
+            if numerolista[i] == numerousuariolista[u] and i==u:
+                correcto=correcto + 1
+            else:
+                aprox = aprox + 1
+        i=0
+        u=u+1
+    
+    return correcto,aprox    
+
 trampa=True
 listaintentos=[]
 listanombres=[]
@@ -40,13 +59,16 @@ while continuarjuego:
     numero = generarnumero()
     if trampa:
         print ("Esto es trampa!!",numero)
-    numerousuario=int(input("Ingrese numero:"))
+    numerousuario=int(input("Ingrese numero:"))    
     intentos=1
-    while numerousuario != numero and numerousuario != -1:
-        if numerousuario > numero:
-            print("El numero ingresado es mayor")
-        elif numerousuario < numero:
-            print("El numero ingresado es menor")
+    while numerousuario != numero and numerousuario != -1:                
+#         if numerousuario > numero:
+#             print("El numero ingresado es mayor")
+#         elif numerousuario < numero:
+#             print("El numero ingresado es menor")
+          
+        print("Cantidad de dígitos correctos y aproximados:", busquedasecuencial(numero,numerousuario))                   
+            
         intentos=intentos+1
         numerousuario=int(input("Ingrese numero:"))
     if numerousuario == -1:
