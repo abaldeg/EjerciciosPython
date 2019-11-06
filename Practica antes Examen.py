@@ -32,30 +32,35 @@ def buscarlista (lista,numero):
 # eliminar elementos
 def eliminarelementos(lista):
     i=0
-    while i < len(lista):
+    while i < len(lista)-1:
         if lista[i]==lista[i+1]:
             del lista[i]
-        i=i+1
+        else:
+            i=i+1
+    return lista
 
 # Imprimir lista
 
 
 # Calcular biciesto
 def calcularbiciesto(año):
-    if (año % 4 == 0 and año % 100 == 0) or año % 400 == 0:
+    biciesto=False
+    if (año % 4 == 0 and año % 100 != 0) or año % 400 == 0:
         bicisto=True
     else:
-        biciesto=false
-   
+        biciesto=False
+    return biciesto
 
 # Extraer digitos de un numero
-def extraerdigitos(numero):
-    numero=0
-    while numero <= 10:
+def extraerdigitos(numero):    
+    digito=0
+    while numero >= 10:
         digito=numero%10
         print (digito)
+        print()
         numero=numero/10
     print (numero)
+    print()
     
 
 # Ordenar dos listas
@@ -75,7 +80,23 @@ def comparalistas(lista1,lista2):
                 aprox=aprox+1
     return exacto, aprox
                 
-            
-    
-
-
+#Programa principal
+lista=[]
+lista=cargarlista(lista,10)
+print (lista)
+print()
+lista=ordenarlista(lista)
+print (lista)
+print()
+print (buscarlista (lista,8))
+print()
+print(eliminarelementos(lista))
+print()
+#print(calcularbiciesto(2016))
+#print()
+extraerdigitos(1243459806)
+print()
+lista1=[1,2,3,4,5]
+lista2=[1,5,3,4,2]
+print (comparalistas(lista1,lista2))
+print()
