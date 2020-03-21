@@ -6,15 +6,17 @@
 
 #Bloque Funciones
 def VerificaFecha (d,m,a):
+    """Funcion que calcula la fecha Valida"""
     meses28Dias=[2]
     meses30Dias=[4,6,9,11]
     meses31Dias=[1,3,5,7,8,10,12]
+    esBisiesto = lambda año: (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0)
     
     if mes in meses28Dias:
-        if d > 28:
-            return False
-        else:
+        if d <= 28 or (d == 29 and esBisiesto(a)):
             return True
+        elif :
+            return False
         
     if mes in meses30Dias:
         if d > 30:
@@ -32,7 +34,15 @@ def VerificaFecha (d,m,a):
        return True
     else:
         return False
-    
-    
-
+ 
 #Bloque programa Principal
+d=int(input("Ingrese día: "))
+m=int(input("Ingrese Mes: "))
+a=int(input("Ingrese Año: "))
+
+r=VerificaFecha(a,m,d)
+if r == True:
+    print("La fecha ingresada es válida")
+else:
+    print("La fecha ingresada NO es válida")
+
