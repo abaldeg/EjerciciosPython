@@ -28,6 +28,7 @@ def CalcularGastos(cantViajes):
     
     return costoTotal
 
+# Bloque Programa Principal.
 cantViajes=int(input("Cantidad de viajes: "))
 print("Gasto total: ", CalcularGastos(cantViajes))
 
