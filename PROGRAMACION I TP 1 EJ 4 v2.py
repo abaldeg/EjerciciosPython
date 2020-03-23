@@ -14,12 +14,19 @@ def CalcularGastos(cantViajes):
     tarifa=float(input("Valor de la tarifa: "))
     costoTotal=0
     
-    if cantViajes > 1 and cantViajes < 20:
+    if cantViajes >= 1 and cantViajes <= 20:
         costoTotal=cantViajes*tarifa
-        return costoTotal
-    elif cantViajes >= 21 and <= 30:
-        costoTotal=(20*tarifa)+(cantViajes*(tarifa-tarifa*0,20))
-        return costoTotal
+    
+    elif cantViajes >= 21 and cantViajes <= 30:
+        costoTotal=(20*tarifa)+((cantViajes-20)*(tarifa-tarifa*0.20))
+    
+    elif cantViajes >= 31 and cantViajes <= 40:
+        costoTotal=(20*tarifa)+((cantViajes-20)*(tarifa-tarifa*0.20))+((cantViajes-30)*(tarifa-tarifa*0.30))
+    
+    elif cantViajes > 40:
+        costoTotal=(20*tarifa)+((cantViajes-20)*(tarifa-tarifa*0.20))+((cantViajes-30)*(tarifa-tarifa*0.30))+((cantViajes-40)*(tarifa-tarifa*0.40))
+    
+    return costoTotal
 
 cantViajes=int(input("Cantidad de viajes: "))
 print("Gasto total: ", CalcularGastos(cantViajes))
