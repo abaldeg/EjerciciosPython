@@ -3,7 +3,6 @@ n = int(input("Votos del candidato? (-1 para terminar): "))
 while n !=-1:
     votos = votos + [n] # votos.append(n) sería similar
     n = int(input("Votos del candidato? (-1 para terminar) "))
-
 print( ) 
 
 # Calcular porcentajes e imprimir listado final 
@@ -14,4 +13,4 @@ for i in range(len(votos)):
     # Imprimir el gráfico de barras
     for j in range(int(porcentaje/10)):
         print("*", end="")
-    print( )
+    print()
