@@ -18,20 +18,22 @@ def encontrarRepetidos (listaNumeros):
     return estado
 
 def eliminarRepetidos (listaNumeros):
-     listasinRep = listaNumeros
-     for i in range (len(listaNumeros)):
-         #no!!! listasinRep.remove(listaNumeros [i])
-         while listaNumeros.count(listaNumeros[i]) > 1:
-             listasinRep.remove(listaNumeros [i])
-     return (listasinrep)
+    listasinRep = []
+    for i in range (len(listaNumeros)):
+        if listasinRep.count(listaNumeros[i]) == 0:
+            # Hay repetidos
+            listasinRep.append(listaNumeros[i])                      
+    
+    return (listasinRep)
       
 
 # Programa Principal
 listaNumeros=[]
+
 generarLista(listaNumeros)
 print(listaNumeros)
 print()
-listaRepetidos=[1,2,3,4,4,5,6,7,8,9]
+listaRepetidos=[1,1,1,2,3,4,4,5,6,77,8,8,9,9,9]
 repetidos=encontrarRepetidos(listaRepetidos)
 if repetidos:
     print("Se encontraron numeros repetidos")
