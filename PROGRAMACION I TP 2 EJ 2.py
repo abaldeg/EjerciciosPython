@@ -11,18 +11,19 @@ def generarLista (listaNumeros):
         listaNumeros.append(random.randint(1,100))
 
 def encontrarRepetidos (listaNumeros):
+    estado=False
     for i in range (len(listaNumeros)):
-        if lista.count(listaNumeros[i]) > 0:
-            return True # PREGUNTA: ESTA BIEN RETORNAR DENTRO DE UN FOR?
-    return false
+        if listaNumeros.count(listaNumeros[i]) > 1:
+            estado=True # PREGUNTA: ESTA BIEN RETORNAR DENTRO DE UN FOR?
+    return estado
 
-def eliminarRepetidos(listaNumeros):
+def eliminarRepetidos (listaNumeros):
      listasinRep = listaNumeros
      for i in range (len(listaNumeros)):
          #no!!! listasinRep.remove(listaNumeros [i])
          while listaNumeros.count(listaNumeros[i]) > 1:
              listasinRep.remove(listaNumeros [i])
-    return (listasinrep)
+     return (listasinrep)
       
 
 # Programa Principal
@@ -30,10 +31,14 @@ listaNumeros=[]
 generarLista(listaNumeros)
 print(listaNumeros)
 print()
-if encontrarRepetidos (listaNumeros) = True:
+listaRepetidos=[1,2,3,4,4,5,6,7,8,9]
+repetidos=encontrarRepetidos(listaRepetidos)
+if repetidos:
     print("Se encontraron numeros repetidos")
+else:
+    print("NO se encontraron numeros repetidos")
 print()
-Print(" Lista sin repetidos :",eliminarRepetidos (listaNumeros))
+print("Lista sin repetidos :",eliminarRepetidos (listaRepetidos))
 
 
 
