@@ -25,7 +25,16 @@ def eliminarRepetidos (listaNumeros):
             listasinRep.append(listaNumeros[i])                      
     
     return (listasinRep)
-      
+
+def eliminarRepetidosMismaLista(listaNumeros):
+    largo=len(listaNumeros)
+    i=0
+    while i < largo:
+        if listaNumeros.count(listaNumeros[i]) > 1:
+            del listaNumeros[i]
+        i=i+1
+        largo=len(listaNumeros)
+        
 
 # Programa Principal
 listaNumeros=[]
@@ -40,8 +49,10 @@ if repetidos:
 else:
     print("NO se encontraron numeros repetidos")
 print()
-print("Lista sin repetidos :",eliminarRepetidos (listaRepetidos))
-
+print("NUEVA Lista sin repetidos :",eliminarRepetidos (listaRepetidos))
+print()
+eliminarRepetidosMismaLista(listaRepetidos)
+print("Lista ORIGINAL sin repetidos :",listaRepetidos)
 
 
 
