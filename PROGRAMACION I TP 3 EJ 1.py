@@ -20,13 +20,17 @@
 
 
 #Funciones
-def cargarMatriz(matriz):    
+def cargarMatriz(matriz):
+# a. Cargar números enteros en una matriz de N x N, ingresando los datos desde
+# teclado.
     for f in range(len(matriz)):
         for c in range(len(matriz)):
             numero=int(input("Ingrese numero para matriz: "))
             matriz[f][c]=numero
     return
-                
+
+def ordenarFilas ()
+# b. Ordenar en forma ascendente cada una de las filas de la matriz.
 
 #Programa Principal
 n=int(input("Ingrese tamaño de la matriz: "))
