@@ -18,20 +18,21 @@ def rellenarMatriz (n,m):
     numerorand=random.randint(0,n*2)
     for f in range (filas):
         for c in range(columnas):
-            if buscarNoRepetido(matriz,numerorand)
+            if buscarRepetido(matriz,numerorand) == 0:
+                matriz.append([f],[c])
          
       
-def buscarNoRepetido (matriz,numero):
+def buscarRepetido (matriz,numero):
     filas=len(matriz)
     columnas=len(matriz[0])
-    sinrepetido=True
+    repetido=0
     f=0
-    while sinrepetido and f <==filas:        
+    while repetido == 0 and f <==filas:        
         for c in range(columnas):
             if matriz[f,c]==numero:
-                sinrepetido==False        
+                repetido==1        
         f=f+1
-    return (sinrepetido)
+    return (repetido)
 
 
 #Programa Principal
