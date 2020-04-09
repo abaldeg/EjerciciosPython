@@ -75,7 +75,7 @@ def imprimirmatriz(mat):
     tam = len(mat)
     for f in range(tam):
         for c in range(tam):
-            print("%3d" %mat[f][c], end ="")
+            print("%3d %04d" %(mat[f][c],tam), end ="")
         print( )
 
 # Programa principal
