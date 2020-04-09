@@ -29,8 +29,13 @@ def cargarMatriz(matriz):
             matriz[f][c]=numero
     return
 
-def ordenarFilas ()
-# b. Ordenar en forma ascendente cada una de las filas de la matriz.
+def ordenarFilas (matriz):
+    # b. Ordenar en forma ascendente cada una de las filas de la matriz.
+    matriz.sort()
+
+def intercambiaFilas (matriz,f1,f2):
+    # c. Intercambiar dos filas, cuyos números se reciben como parámetro.
+
 
 #Programa Principal
 n=int(input("Ingrese tamaño de la matriz: "))
@@ -42,6 +47,7 @@ for f in range(n):
     for c in range (n):
         print ("%d" %(matriz[f][c]), end="")
     print()
+
 cargarMatriz(matriz)
 print("La matriz cargada a mano está así:")
 for f in range(len(matriz)):
@@ -49,3 +55,9 @@ for f in range(len(matriz)):
         print ("%d" %(matriz[f][c]), end="")
     print()
 
+ordenarFilas(matriz)
+print("La matriz ordenada está así:")
+for f in range(len(matriz)):
+    for c in range (len(matriz)):
+        print ("%d" %(matriz[f][c]), end="")
+    print()
