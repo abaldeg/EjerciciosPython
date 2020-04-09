@@ -33,8 +33,19 @@ def ordenarFilas (matriz):
     # b. Ordenar en forma ascendente cada una de las filas de la matriz.
     matriz.sort()
 
-def intercambiaFilas (matriz,f1,f2):
+def intercambiaFilas (matriz,numero1,numero2):
     # c. Intercambiar dos filas, cuyos números se reciben como parámetro.
+    matrizaux=[]
+    for f in range(matriz):
+        if numero1==matrix[f]:
+            matrizaux.append=[f][:]            
+            break
+    for f in range(matriz):
+        if numero2==matrix[f]:
+            matrizaux.append=[f][:]            
+            break
+            
+    matriz[]
 
 
 #Programa Principal
