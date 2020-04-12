@@ -34,12 +34,13 @@ def ordenarFilas (matriz):
     matriz.sort()
 
 def intercambiaFilas (matriz,numero1,numero2):
-    # c. Intercambiar dos filas, cuyos números se reciben como parámetro.
-    lista1=[]
-    lista2=[]
+    # c. Intercambiar dos filas, cuyos números se reciben como parámetro.    
     listaaux=matriz[numero1][:]    
     matriz[numero1][:]=matriz[numero2][:]
     matriz[numero2][:]=listaaux
+
+def intercambiaColumnas (matriz,numero1,numero2):
+    # d. Intercambiar dos columnas dadas, cuyos números se reciben como parámetro.
     
 
 #Programa Principal
@@ -68,4 +69,5 @@ for f in range(len(matriz)):
     print()
     
 intercambiaFilas(matriz,0,1)
-
+print(matriz[numero1][:])
+print(matriz[numero2][:])
