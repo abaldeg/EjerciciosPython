@@ -35,18 +35,12 @@ def ordenarFilas (matriz):
 
 def intercambiaFilas (matriz,numero1,numero2):
     # c. Intercambiar dos filas, cuyos números se reciben como parámetro.
-    matrizaux=[]
-    for f in range(matriz):
-        if numero1==matrix[f]:
-            matrizaux.append=[f][:]            
-            break
-    for f in range(matriz):
-        if numero2==matrix[f]:
-            matrizaux.append=[f][:]            
-            break
-            
-    matriz[]
-
+    lista1=[]
+    lista2=[]
+    listaaux=matriz[numero1][:]    
+    matriz[numero1][:]=matriz[numero2][:]
+    matriz[numero2][:]=listaaux
+    
 
 #Programa Principal
 n=int(input("Ingrese tamaño de la matriz: "))
@@ -72,3 +66,6 @@ for f in range(len(matriz)):
     for c in range (len(matriz)):
         print ("%d" %(matriz[f][c]), end="")
     print()
+    
+intercambiaFilas(matriz,0,1)
+
