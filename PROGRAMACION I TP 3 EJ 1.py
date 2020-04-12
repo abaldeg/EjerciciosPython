@@ -18,6 +18,7 @@
 # NOTA: El valor de N debe establecerlo el programador o ingresarse por teclado,
 # pero las funciones deben servir aunque este valor se modifique.
 
+import random
 
 #Funciones
 def cargarMatriz(matriz):
@@ -41,6 +42,11 @@ def intercambiaFilas (matriz,numero1,numero2):
 
 def intercambiaColumnas (matriz,numero1,numero2):
     # d. Intercambiar dos columnas dadas, cuyos números se reciben como parámetro.
+    fila=random.randint(0,len(matriz)-1)
+    listaaux=matriz[fila][numero1]
+    matriz[fila][numero1]=matriz[fila][numero2]
+    matriz[fila][numero2]=listaaux    
+    return(fila)
     
 
 #Programa Principal
@@ -69,5 +75,10 @@ for f in range(len(matriz)):
     print()
     
 intercambiaFilas(matriz,0,1)
-print(matriz[numero1][:])
-print(matriz[numero2][:])
+print(matriz[0][:])
+print(matriz[1][:])
+
+filaCambiada=intercambiaColumnas(matriz,0,1)
+print("Matiz cambiada : ",matriz[filaCambiada][0],matriz[filaCambiada][1])
+print("Fila cambiada : ", filaCambiada)
+
