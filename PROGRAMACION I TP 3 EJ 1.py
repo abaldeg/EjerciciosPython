@@ -48,12 +48,6 @@ def intercambiaColumnas (matriz,numero1,numero2):
     matriz[fila][numero2]=listaaux    
     return(fila)
 
-def intercambiaFxC(matriz,f,c):
-    # e. Intercambiar una fila por una columna, cuyos números se reciben como parámetro.    
-    aux=matriz[f][:] #Me quedo con la fila original
-    matriz[f][:]=matriz[:][c] #piso a la fila con la lista de la columna que entro como param
-    matriz[:][c]=aux #piso a la columna con la lista de la fila que entro como param y guarde en aux.
-
 #Programa Principal
 n=int(input("Ingrese tamaño de la matriz: "))
 matriz=[]
@@ -93,6 +87,8 @@ for f in range(len(matriz)):
         print ("%d" %(matriz[f][c]), end="")
     print()
 print
+
+print("matriz[:][c]: ", matriz[:][c])
 
 intercambiaFxC(matriz,0,1)
 print("")
