@@ -14,8 +14,8 @@
 
 #Funciones
 
-def filtrar_palabrasA(frase, n):
-    #a. Utilizando sólo ciclos normales
+#a. Utilizando sólo ciclos normales
+def filtrar_palabrasA(frase, n):    
     lstPalabras = frase.split()
     lstPalabrasN = []
     for i in range(len(lstPalabras)):
@@ -24,10 +24,24 @@ def filtrar_palabrasA(frase, n):
     return (lstPalabrasN)
 
 #b. Utilizando listas por comprensión
+def filtrar_palabrasB(frase,n):
+    lstPalabras = frase.split()
+    lstPalabrasN = [x for x in lstPalabras if len(x) >= 6]
+    return (lstPalabrasN)    
 
 #c. Utilizando la función filter
+def filtrar_palabrasC(frase,n):    
+    #Hay que hacer split para que tome a frase como lista de palabras sino
+    #la función lambda toma cada caracter del parámetro frase
+    lstPalabras = frase.split()
+    lstPalabrasN = list(filter(lambda x:len(x)>=6,lstPalabras))
+    return (lstPalabrasN)
 
 #Programa Principal
 frase='Lunes Martes Miércoles'
 print(filtrar_palabrasA(frase,6))
+print()
+print(filtrar_palabrasB(frase,6))
+print()
+print(filtrar_palabrasC(frase,6))
 
