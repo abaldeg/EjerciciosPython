@@ -81,3 +81,29 @@ def pypart(n):
 n=5
 pypart(n) 
 #
+precio=5.2
+print("Precio: %5.2f" %precio)
+#
+print("X= %4d Y= %4d" %(x,y))
+#
+print(10//3) #3
+#
+print(10/3) #3.3333333333333335
+#
+print(10%3) # 1
+#
+for i in range(2,11,2):
+    print(i, end="") #246810
+#
+for i in range(2,11,2):  #2  4  6  8 10  
+    print("%2d " %i, end="")
+#
+for i in range(2,11,2):    
+    print("%2d " %i)
+# 2 
+# 4 
+# 6 
+# 8 
+#10
+
+
