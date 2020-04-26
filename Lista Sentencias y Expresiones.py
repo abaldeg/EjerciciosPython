@@ -107,6 +107,13 @@ for i in range(2,11,2):
 #10
 
 #
-
-
+print(1,12,2019,sep="/") #1/12/2019
+print(1,"/",12,"/",2019,sep="") #1/12/2019
+#
+cuadrado=lambda x:x**2
+print (cuadrado(3)) #9
+#
+alaN=lambda x,y=2:x**y #y puede no venir, hay default = 2
+print (alaN(3,3)) #27
+print (alaN(3)) #9
 
