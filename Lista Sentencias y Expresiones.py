@@ -126,6 +126,19 @@ lista.index(7,0,3)
 #ValueError: 7 is not in list
 lista.index(7,0,8) #6
 #
+def sumaAcumulada(listaOriginal):    
+    listaAcumulada.append(listaOriginal[0])
+    sumaAcumulada=listaOriginal[0]
+    for i in range(1,len(listaOriginal)):        
+        listaAcumulada.append(listaOriginal[i]+sumaAcumulada)
+        sumaAcumulada=sumaAcumulada+listaOriginal[i]
+    return
+listaOriginal=[1,2,3]
+listaAcumulada=[]
+sumaAcumulada(listaOriginal)
+for i in range(len(listaAcumulada)):    
+    print("%3d" %listaAcumulada[i], end="")
+#1  3  6
 #
 
 
