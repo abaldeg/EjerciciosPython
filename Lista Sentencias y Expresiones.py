@@ -140,6 +140,22 @@ for i in range(len(listaAcumulada)):
     print("%3d" %listaAcumulada[i], end="")
 #1  3  6
 #
-
-
+#Funciones
+def eliminaPalabras(listaPalabras):    
+    for i in range(len(listaPalabras)):
+        if listaPalabras[i] not in ListaPalabraEliminar:
+            NuevaLista.append(listaPalabras[i])           
+#Programas
+listaPalabras=["Ave", "Programa", "Azul"]
+NuevaLista=[]
+print(listaPalabras)
+print()
+ListaPalabraEliminar=["Programa"]
+print(ListaPalabraEliminar)
+print()
+eliminaPalabras(listaPalabras)
+print(NuevaLista)
+#['Ave', 'Programa', 'Azul']
+#['Programa']
+#['Ave', 'Azul']
 
