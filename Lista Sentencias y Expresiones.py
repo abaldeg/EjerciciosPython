@@ -116,4 +116,17 @@ print (cuadrado(3)) #9
 alaN=lambda x,y=2:x**y #y puede no venir, hay default = 2
 print (alaN(3,3)) #27
 print (alaN(3)) #9
+#
+lista=[1,2,3,4,5,6,7,8,9,10]
+lista.index(1) #0
+lista.index(7) #6
+lista.index(7,0,3)
+#Traceback (most recent call last):
+  #File "<pyshell>", line 1, in <module>
+#ValueError: 7 is not in list
+lista.index(7,0,8) #6
+#
+#
+
+
 
