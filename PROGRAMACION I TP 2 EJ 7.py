@@ -8,15 +8,13 @@ def analizaOrdenLista(lista):
     ordenada=True
     if len(lista) <= 1:
         #
-        print ("La lista esta vacía o tiene un solo elemento")
+        print ("La lista esta vacía o tiene un solo elemento. ", end="")
         ordenada=False
     else:
         for i in range(len(lista)-1):
             if lista[i]>lista[i+1]:
                 ordenada=False    
     return(ordenada)
-
-
 #Programa Principal
 lista=[1,2,3]
 print(analizaOrdenLista(lista))

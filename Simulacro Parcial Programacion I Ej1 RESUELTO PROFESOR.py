@@ -9,13 +9,13 @@ while True:
 espaciosizq = n-1
 # Primera fila
 for i in range(espaciosizq):
-    print(" ", end="")
+    print("-", end="")
 print("*")
 # laterales
 for i in range(n-2):
     espaciosizq = espaciosizq - 1
     for j in range(espaciosizq):
-        print(" ", end="")
+        print("1", end="")
     for j in range(i*2+3):
         print("*", end="")
     print( )    

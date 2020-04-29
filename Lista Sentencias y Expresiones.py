@@ -6,6 +6,8 @@ frase.split()
 for i in range(n):
     m.append([0]*n)
 #
+matriz = [[0]*(n) for i in range(n)]
+#
 for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
@@ -49,9 +51,19 @@ Sliced_List=List[5:]
 Sliced_List=List[:]
 Sliced_List=List[:-6]
 #
+lista=[1,2,3,4]
+print(lista[1:1]) #Rebanada nula
+
+#
 Sliced_List=List[::-1]
 print("\nPrinting List in reverse: ")
 print(Sliced_List)
+#
+lista=[1,2,3,4,5,6]
+a=0
+b=4
+sublista=lista[a:b]
+print(sublista) # [1, 2, 3, 4]
 #
 for i in range (random.randint(10,99)):
     listaRandom.append(random.randint(1000,9999))
