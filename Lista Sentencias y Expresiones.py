@@ -52,8 +52,11 @@ Sliced_List=List[:]
 Sliced_List=List[:-6]
 #
 lista=[1,2,3,4]
-print(lista[1:1]) #Rebanada nula
-
+print(lista[1:1]) #[] Rebanada nula
+#
+lista=["a","b","c"]
+lista[1:1]=["B","C","D"]
+print (lista) #['a', 'B', 'C', 'D', 'b', 'c']
 #
 Sliced_List=List[::-1]
 print("\nPrinting List in reverse: ")
