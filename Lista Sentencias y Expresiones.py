@@ -12,6 +12,7 @@ for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
 #
+# 1 a n columnas para todas las filas
 print("Lista de Ventas: ", [x[1:cantMeses+1] for x in mat])
 #
 numeros=[]

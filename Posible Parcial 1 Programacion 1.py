@@ -74,12 +74,10 @@ def calcularMesMayorVta(mat):
 def calcularCantVtas(cantMeses=6):
     listaCantVtas=[0]*(cantMeses+1)
     acum=0
-    #acum=sum(mat[1:][c])        
-    print("Lista de Ventas: ", [x[1:cantMeses+1] for x in mat])
+    #acum=sum(mat[1:][c])
+    listaCantVtas=[x[1:cantMeses+1] for x in mat]
+    print("Lista de Ventas cruda: ", [x[1:cantMeses+1] for x in mat])       
     
-        
-    
-
 
 #Programa Principal
 mat=[]
