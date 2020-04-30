@@ -12,7 +12,7 @@ for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
 #
-numeros=[ ]
+numeros=[]
 for f in range(n):
     for c in range(n):
         azar = random.randint(0,cantidad-1)
@@ -21,10 +21,27 @@ for f in range(n):
         mat[f][c] = azar
         numeros.append(azar)
 #
-for f in range(tam):
-    for c in range(tam):
-        print("%3d" %mat[f][c],end ="")
-        print()
+def crearMatVtas():
+    mat=[]
+    for i in range(0,14):
+        mat.append([0]*14)    
+     
+    for col in range(1,14):
+        mat[0][col]=col   
+        
+    for fil in range(1,14):
+        r=lambda: random.randint(1,12) 
+        mat[fil][0]=r()
+        
+    for f in range(1,13):
+        for c in range(1,13):                                   
+            mat[f][c]=random.randint(0,2000) 
+            
+    for f in range(0,13):
+        for c in range(0,13):            
+            print("%5d" %(mat[f][c]), end="-")      
+        print()
+    
 #
 listaaux=matriz[numero1][:]
 matriz[numero1][:]=matriz[numero2][:]
