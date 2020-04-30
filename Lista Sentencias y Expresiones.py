@@ -12,6 +12,8 @@ for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
 #
+print("Lista de Ventas: ", [x[1:cantMeses+1] for x in mat])
+#
 numeros=[]
 for f in range(n):
     for c in range(n):
