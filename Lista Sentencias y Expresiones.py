@@ -277,3 +277,110 @@ def multiply_list(items):
     return tot
 print(multiply_list([1,2,-8]))
 #
+def max_num_in_list( list ):
+    max = list[ 0 ]
+    for a in list:
+        if a > max:
+            max = a
+    return max
+print(max_num_in_list([1, 2, -8, 0]))
+#
+def contarCadenas(lista):
+    cont=0
+    for c in lista:
+        if len(c) > 1 and c[0]==c[-1]:
+            cont=cont+1
+    return(cont)
+
+lista=['abc', 'xyz', 'aba', '1221']
+print(contarCadenas(lista))
+#
+#Write a Python program to check a list is empty or not.
+#not de un vacio es True
+l = []
+if not l:
+  print("List is empty")
+print(l)
+#
+#Write a Python program to clone or copy a list
+original_list = [10, 22, 44, 23, 4]
+new_list = list(original_list)
+new_list2 = original_list
+print(original_list)
+print(new_list)
+print(new_list2)
+#
+#find the list of words that are longer than n from a given list of words
+def long_words(n, str):
+    word_len = []
+    txt = str.split(" ")
+    for x in txt:
+        if len(x) > n:
+            word_len.append(x)
+    return word_len 
+print(long_words(3, "The quick brown fox jumps over the lazy dog"))
+#['quick', 'brown', 'jumps', 'over', 'lazy']
+#
+#Write a Python function that takes two lists and returns True if they have at least one common member.
+def common_data(list1, list2):
+     result = False
+     for x in list1:
+         for y in list2:
+             if x == y:
+                 result = True
+                 return result
+print(common_data([1,2,3,4,5], [5,6,7,8,9]))
+print(common_data([1,2,3,4,5], [6,7,8,9]))
+#
+#Write a Python program to print a specified list after removing the 0th, 4th and 5th elements.
+#Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+#Expected Output : ['Green', 'White', 'Black']
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+color = [x for (i,x) in enumerate(color) if i not in (0,4,5)] #enumerate lo vimos asi que se puede usar en parcial.
+print(color)
+#
+#Write a Python program to generate a 3*4*6 3D array whose each element is *
+array = [[ ['*' for col in range(6)] for col in range(4)] for row in range(3)]
+array = [[ ['*' for col in range(6)] for col in range(4)] "-" for row in range(3)] #No funca: SyntaxError: invalid syntax
+print(array)
+#
+#Write a Python program to print the numbers of a specified list after removing even numbers from it.
+num = [7,8, 120, 25, 44, 20, 27]
+num = [x for x in num if x%2!=0]
+print(num)
+
+num = [7,8, 120, 25, 44, 20, 27,0]
+num = [x for x in num if x==0] #Ejemplo con operador booleano.
+print(num)
+#
+#Write a Python program to shuffle and print a specified list
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color) #la vimos en clase
+print(color)
+#
+#Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers
+#between 1 and 30 (both included).
+def printValues():
+    l = list()
+    for i in range(1,21):
+        l.append(i**2)
+    print(l[:5])
+    print(l[-5:])
+printValues()
+#
+#Difference between the two lists
+list1 = [1, 2, 3, 4]
+list2 = [1, 2]
+print(list(set(list1) - set(list2)))
+
+listaResultado=[]
+for e in list1:
+    if e not in list2:
+        listaResultado.append(e)
+print(listaResultado)
+#
+
+
+
+
