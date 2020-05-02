@@ -1,5 +1,15 @@
 #Lista sentencias
 
+# Crear matriz
+for i in range(n):
+    m.append([0]*n)
+
+#Imprimir una matriz
+for f in range(tam):
+    for c in range(tam):
+        print("%3d" %mat[f][c], end ="")
+    print()
+
 #Sacar digitos numeor entero
 while cociente >= 10 :
     resto = cociente % 10
@@ -20,14 +30,14 @@ for i in range(n):
 #Inicializacion de Matriz con listas por compresion
 matriz = [[0]*(n) for i in range(n)]
 
-#
+#Inicializacion de Matriz con 0..n tanto en filas como en columnas
 for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
 #
 # 1 a n columnas para todas las filas
 print("Lista de Ventas: ", [x[1:cantMeses+1] for x in mat])
-#
+#Generazion de numeros aleatorios no repetidos.
 numeros=[]
 for f in range(n):
     for c in range(n):
@@ -36,7 +46,7 @@ for f in range(n):
             azar = random.randint(0,cantidad-1)
         mat[f][c] = azar
         numeros.append(azar)
-#
+# Creacion de matriz de ventas con la fila cero para los doce meses y columna cero para productos aleatorios del 1 al 12.
 def crearMatVtas():
     mat=[]
     for i in range(0,14):
@@ -46,30 +56,34 @@ def crearMatVtas():
         mat[0][col]=col   
         
     for fil in range(1,14):
-        r=lambda: random.randint(1,12) 
+        r=lambda: random.randint(1,12) #Generacion aleatoria de las filas con id de productos.
         mat[fil][0]=r()
         
     for f in range(1,13):
         for c in range(1,13):                                   
-            mat[f][c]=random.randint(0,2000) 
+            mat[f][c]=random.randint(0,2000) #Generacion de la ventas de los productos en cada mes
             
     for f in range(0,13):
         for c in range(0,13):            
-            print("%5d" %(mat[f][c]), end="-")      
+            print("%5d" %(mat[f][c]), end="-")  #Impresion de la matriz    
         print()
     
-#
+# Intercambio de filas.
 listaaux=matriz[numero1][:]
 matriz[numero1][:]=matriz[numero2][:]
 matriz[numero2][:]=listaaux
 print(matriz[numero1][:])
 print(matriz[numero2][:])
-#
+
+# Pasa una frase a lista de palabras
 lstPalabras=frase.split()
-#
+
+#Lista por compresion con palabras mayores a seis letras.
 lstPalabrasN=[x for x in lstPalabras if len(x)>=6]
-#
+
+# Mismo con funcion lambda
 lstPalabrasN=list(filter(lambda x:len(x)>=6,lstPalabras))
+
 #
 List.insert(3, 12)
 List.insert(0,'Geeks')
@@ -100,16 +114,16 @@ a=0
 b=4
 sublista=lista[a:b]
 print(sublista) # [1, 2, 3, 4]
-#
+# Generacion aleatoria de tamaño de lista y valores.
 for i in range (random.randint(10,99)):
     listaRandom.append(random.randint(1000,9999))
-#
+# Calculo de año biciesto con lambda (True/False)
 esBisiesto=lambda año: (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0)
 #
 l.sort(reverse=True)
 #
 l[i]=i**2
-#
+#Chequeo de que un elemento de la lista l1 esté en l2
 if l1[i] in l2:
     comun=True 
 #
@@ -133,11 +147,11 @@ precio=5.2
 print("Precio: %5.2f" %precio)
 #
 print("X= %4d Y= %4d" %(x,y))
-#
+#Cociente, parte entera
 print(10//3) #3
-#
+# Cociente decimal (posta)
 print(10/3) #3.3333333333333335
-#
+#Resto de la division
 print(10%3) # 1
 #
 for i in range(2,11,2):
@@ -421,5 +435,53 @@ print ("++".join(map(str, L))) # "++" porque ya no se pasa a int
 #    The string whose method is called is inserted in between each given string.
 #    The result is returned as a new string.
 #    Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
+#Split a list into different variables
+color = [("Black", "#000000", "rgb(0, 0, 0)"), ("Red", "#FF0000", "rgb(255, 0, 0)"),
+         ("Yellow", "#FFFF00", "rgb(255, 255, 0)")]
+var1, var2, var3 = color
+print(var1)
+print(var2)
+print(var3)
+#
+#Generate groups of five consecutive numbers in a list
+l = [[5*i + j for j in range(1,6)] for i in range(15) ] #La exp de afuera son las filas: for i in range(15)]
+print(l)
+print()
+
+l = [[j for j in range(1)] for i in range(6) ] #La exp de afuera son las filas
+print(l) #[[0], [0], [0], [0], [0], [0]]
+print()
+
+l = [[j for j in range(2)] for i in range(6) ] #i=filas j=columnas
+print(l) #[[0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]]
+print()
+
+l = [[j for j in range(3)] for i in range(2) ] #i=filas j=columnas
+print(l) #[[0, 1, 2], [0, 1, 2]]
+print()
+#
+#Print a nested lists using the print() function
+colors = [['Red'], ['Green'], ['Black']]
+print('\n'.join([str(lst) for lst in colors]))
+#Generate groups of five consecutive numbers in a list
+l = [[5*i + j for j in range(1,6)] for i in range(15) ] #La exp de afuera son las filas: for i in range(15)]
+print(l)
+print()
+
+l = [[j for j in range(1)] for i in range(6) ] #La exp de afuera son las filas
+print(l) #[[0], [0], [0], [0], [0], [0]]
+print()
+
+l = [[j for j in range(2)] for i in range(6) ] #i=filas j=columnas
+print(l) #[[0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]]
+print()
+
+l = [[j for j in range(3)] for i in range(2) ] #i=filas j=columnas
+print(l) #[[0, 1, 2], [0, 1, 2]]
+print()
+
+#Write a Python program to find the list in a list of lists whose sum of elements is the highest.
+num = [[1,2,3], [4,5,6], [10,11,12], [7,8,9]]
+print(max(num, key=sum))
 
 
