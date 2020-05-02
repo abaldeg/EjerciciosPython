@@ -1,18 +1,25 @@
 #Lista sentencias
+
+#Sacar digitos numeor entero
 while cociente >= 10 :
     resto = cociente % 10
     cociente = cociente // 10
     cont = cont + 1
     cantDig = cont + 1
-#
+
+#Palabras que cunplan condicion con listas por compresion
 lstPalabrasN = [x for x in lstPalabras if len(x) >= 6]
-#
+
+#Convertir un string en lista de palabras
 frase.split()
-#
+
+#Inicializacion de Matriz con for
 for i in range(n):
     m.append([0]*n)
-#
+
+#Inicializacion de Matriz con listas por compresion
 matriz = [[0]*(n) for i in range(n)]
+
 #
 for i in range(n+1):
     matriz[0][i] = i
@@ -380,7 +387,39 @@ for e in list1:
         listaResultado.append(e)
 print(listaResultado)
 #
+list1 = [1, 2, 3, 0]
+list2 = ['Red', 'Green', 'Black']
+final_list = list1 + list2
+print(final_list)
+#
+my_list = ['p', 'q']
+n = 4
+new_list = ['{}{}'.format(x, y) for y in range(1, n+1) for x in my_list]
+print(new_list)
 
+new_list2 = ['{}{}--------{}'.format(x, y,z) for z in range(1,10) for y in range(1, n+1) for x in my_list]
+print(new_list2) #['p1--------1', 'q1--------1',...
 
+# Sacar id de una variable
+x = 100
+print(format(id(x), 'x'))
+s = 'w3resource'
+print(format(id(s), 'x')) #x es un codigo del format
+#
+#Convert a list of multiple integers into a single integer
+#Convert a list of multiple integers into a single integer
+L = [11, 33, 50]
+print("Original List: ",L)
+x = int("".join(map(str, L))) #map aplica una funcion a cada elemento de una lista. aplica str a L
+print("Single Integer: ",x)
+print ("++".join(map(str, L))) # "++" porque ya no se pasa a int
+#>>> help("str.join")
+#Help on method_descriptor in str:
+#str.join = join(self, iterable, /)
+#    Concatenate any number of strings.
+    
+#    The string whose method is called is inserted in between each given string.
+#    The result is returned as a new string.
+#    Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
 
 
