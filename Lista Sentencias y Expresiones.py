@@ -1,6 +1,7 @@
 #Lista sentencias
 
 # Crear matriz
+m=[]
 for i in range(n):
     m.append([0]*n)
 
@@ -9,6 +10,10 @@ for f in range(tam):
     for c in range(tam):
         print("%3d" %mat[f][c], end ="")
     print()
+
+#Range negativo
+print(list(range(5,-1,-1)))
+#[5, 4, 3, 2, 1, 0]
 
 #Sacar digitos numeor entero
 while cociente >= 10 :
@@ -463,6 +468,7 @@ print()
 #Print a nested lists using the print() function
 colors = [['Red'], ['Green'], ['Black']]
 print('\n'.join([str(lst) for lst in colors]))
+
 #Generate groups of five consecutive numbers in a list
 l = [[5*i + j for j in range(1,6)] for i in range(15) ] #La exp de afuera son las filas: for i in range(15)]
 print(l)
@@ -483,5 +489,14 @@ print()
 #Write a Python program to find the list in a list of lists whose sum of elements is the highest.
 num = [[1,2,3], [4,5,6], [10,11,12], [7,8,9]]
 print(max(num, key=sum))
+#
+# Count the occurrences of the number 4
+print([1, 2, 9, 4, 5, 4, 1].count(4))
+
+# Count the occurrences of the letter "a"
+list = ["d", "a", "t", "a", "c", "a", "m", "p"]
+list.count("a")
+
+#
 
 
