@@ -5,8 +5,7 @@
 
 #Funciones
 def contarCadena(cadena,subcadena):
-    cantidad=0
-   
+    cantidad=0   
     if len(cadena) > 0 and len(subcadena) > 0:
         cadena=cadena.upper()
         subcadena=subcadena.upper()
@@ -27,10 +26,8 @@ def contarCadena(cadena,subcadena):
                 encontrado=False
                 sc=0
                 c+=1
-            cadena=cadena[c:]
-    
-    return(cantidad)
-        
+            cadena=cadena[c:]    
+    return(cantidad)       
         
 #Programa Principal
 cadena="El Principio DEl fin. E l"
