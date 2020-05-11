@@ -13,19 +13,21 @@ def contarCadena(cadena,subcadena):
         sc=0
         cantidad=0
         c=0
-        while c < len(cadena):        
+        while len(cadena) > 0:        
             if cadena.find(subcadena[sc]) != -1: # Encontro caracter de subcadena
                 c=cadena.find(subcadena[sc]) #saltea hasta el nuevo caracter encontrado
-                sc+=1
-                encontrado=True
-                if sc==len(subcadena):
+                c+=1                
+                if sc==len(subcadena)-1:
                     todoEncontrado=True
                     cantidad += 1
                     sc=0
+                else:
+                    sc+=1
             else:
                 encontrado=False
                 sc=0
                 c+=1
+            cadena=cadena[c:]
     
     return(cantidad)
         
