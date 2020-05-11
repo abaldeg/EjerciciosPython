@@ -15,12 +15,32 @@ for f in range(tam):
 print(list(range(5,-1,-1)))
 #[5, 4, 3, 2, 1, 0]
 
-#Sacar digitos numeor entero
+#Sacar digitos numero entero
+cociente=14209
+cantDig=0
+
+print("Cociente %5d" %cociente, end="")
+print()
 while cociente >= 10 :
-    resto = cociente % 10
-    cociente = cociente // 10
-    cont = cont + 1
-    cantDig = cont + 1
+    resto = cociente % 10 # del resto se sacan los digitos
+    cociente = cociente // 10 # me voy quedando con el numero sin los digitos que voy sacando  
+    cantDig = cantDig + 1
+    print("Cosciente %5d" %cociente, end="")
+    print()
+    print("resto %5d" %resto, end="")
+    print()
+    print("Cantidad de digitos %5d" %cantDig, end="")
+    print()
+
+resto = cociente % 10
+cociente = cociente // 10    
+cantDig = cantDig + 1
+print("Cociente %5d" %cociente, end="")
+print()
+print("Resto %5d" %resto, end="")
+print()
+print("Cantidad de digitos %5d" %cantDig, end="")
+print()
 
 #Palabras que cunplan condicion con listas por compresion
 lstPalabrasN = [x for x in lstPalabras if len(x) >= 6]
@@ -498,5 +518,82 @@ list = ["d", "a", "t", "a", "c", "a", "m", "p"]
 list.count("a")
 
 #
+# Nested list comprehension 
+matrix = [[j for j in range(5)] for i in range(5)]   
+print(matrix) 
+#
 
+# 2-D List Como aplanar o hacer una lista de una lista de listas
+matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]] 
+  
+flatten_matrix = [] 
+  
+for sublist in matrix: 
+    for val in sublist: 
+        flatten_matrix.append(val) 
+          
+print(flatten_matrix) #[1, 2, 3, 4, 5, 6, 7, 8, 9]
+#
+# 2-D List. Como aplanar o hacer una lista de una lista de listas con listas por comprensión.
+matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]] 
+  
+# Nested List Comprehension to flatten a given 2-D matrix 
+flatten_matrix = [val for sublist in matrix for val in sublist] 
+  
+print(flatten_matrix) 
 
+# 2-D List of planets 
+planets = [['Mercury', 'Venus', 'Earth'], ['Mars', 'Jupiter', 'Saturn'], ['Uranus', 'Neptune', 'Pluto']] 
+  
+# Nested List comprehension with an if condition 
+flatten_planets = [planet for sublist in planets for planet in sublist if len(planet) < 6] 
+          
+print(flatten_planets) #['Venus', 'Earth', 'Mars', 'Pluto']
+#
+# Python3 Program to Check is a nested 
+# list is a subset of another nested list 
+
+def checkSubset(list1, list2): 
+    l1, l2 = list1[0], list2[0] 
+    exist = True
+    for i in list2: 
+        if i not in list1: 
+            exist = False
+    return exist 
+    
+# Driver Code 
+list1 = [[2, 3, 1], [4, 5], [6, 8]] 
+list2 = [[4, 5], [6, 8]] 
+print(checkSubset(list1, list2)) 
+#
+# python code to demonstrate 
+# splitting nested list 
+# into 2 lists 
+
+# initialising nested lists 
+ini_list = [[1, 2], [4, 3], [45, 65], [223, 2]] 
+
+# printing initial lists 
+print ("initial list", str(ini_list)) 
+
+# code to split it into 2 lists 
+res1 = [i[1] for i in ini_list] 
+res2 = [i[0] for i in ini_list] 
+
+# printing result 
+print("final lists", str(res1), "\n", str(res2)) 
+#initial list [[1, 2], [4, 3], [45, 65], [223, 2]]
+#final lists [2, 3, 65, 2] 
+#[1, 4, 45, 223]
+#
+# Python3 program to Count number 
+# of lists in a list of lists 
+
+def countList(lst): 
+    return len(lst) 
+    
+# Driver code 
+lst = [[1, 2, 3], [4, 5], [6, 7, 8, 9]] 
+print(countList(lst)) #3
+#https://www.geeksforgeeks.org/python-program-to-count-number-of-lists-in-a-list-of-lists/?ref=rp
+#
