@@ -1,4 +1,4 @@
-﻿def rellenarporcolumnas(mat):
+def rellenarporcolumnas(mat):
     n = len(mat)
     contador = 1
     for c in range(n):
