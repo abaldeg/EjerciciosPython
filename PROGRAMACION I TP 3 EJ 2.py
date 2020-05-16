@@ -140,5 +140,5 @@ n=4
 mat=[[0]*n for i in range(n)]
 imprimirmatriz(mat)
 print()
-crearMatriz_ESPIRAL_v1(mat)
+crearMatriz_1357(mat)
 imprimirmatriz(mat)
