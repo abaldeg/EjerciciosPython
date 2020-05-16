@@ -622,10 +622,54 @@ def imprimirmatriz(mat):
             print("%3d" %c, end="")
         print()
 
-# Programa principal
+# Manejo de Excepciones
 n = int(input("Tamaño de la matriz? "))
 print()
 matriz = [[0] * n for i in range(n)]
 rellenarporcolumnas(matriz)
 imprimirmatriz(matriz)
 #
+lista=[]
+n=0
+while n!=-1:
+    try:
+        n=int(input("Ingrese Numero Entero: -1 sale: "))
+        lista.append(n)        
+    except ValueError:
+        print("Debe ser un numero entero")
+        print()    
+n=0
+contError=1
+while n!=-1:
+    try:
+        n=int(input("Ingrese el numero a buscar en la lista: -1 sale: "))                
+        assert contError<3, "Se alcanzó el máximo número de errores"
+        lista.index(n)        
+        print("Numero %3d , encontrado!" %n)
+    except ValueError:
+        print("Numero %3d, no encontrado!" %n)
+        print()
+        contError+=1
+    except AssertionError as mensaje:
+        print(mensaje)
+        break
+#
+#Funciones
+def deterinarCapicua(cadena):
+    mitad=len(cadena)//2
+    if cadena[:mitad]==cadena[:(mitad)*(-1)-1:-1]: #El inicio es -1 y es el primer parametro, el valor final es la mitad y es el segundo parametro
+        return True
+    else:
+        return False  
+#Programa Principal
+cadena="123321"
+print(deterinarCapicua(cadena))
+cadena="123123"
+print(deterinarCapicua(cadena))
+#
+#Leer una cadena de caracteres e imprimirla centrada en pantalla. Suponer que la
+#misma tiene 80 columnas
+
+#Programa Principal
+cadena="Hola"
+print(cadena.center(20,"-")) #No hace falta restarle el len de hola
