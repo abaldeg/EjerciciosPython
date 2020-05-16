@@ -7,5 +7,17 @@
 #funcionamiento de la misma
 
 def ingresarNumNatural():
-    n=int(input("Ingrese Numero Natural"))
-    
+    while True:
+        try:
+            n=int(input("Ingrese Numero Natural: "))
+            assert 0 < n
+            break
+        except ValueError:
+            print("Debe ser un numero entero")
+            print()
+        except AssertionError:
+            print("El numero debe ser mayor a 0")
+            print()
+    return(n)
+
+print(ingresarNumNatural())
