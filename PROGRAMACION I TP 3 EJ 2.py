@@ -10,6 +10,14 @@ def crearMatriz_1357(mat):
                 mat[f][c]=num
         num+=2
 
+def crearMatriz_1357_v2(mat):
+    n=len(mat)
+    num=1
+    for f in range(n):
+        for c in range(f,f+1):
+            mat[f][c]=num
+        num+=2
+        
 def crearMatriz_Diag_1_3_9_27(mat):        
     fin=-1 #nunca llega a -1 por la funcion range. 
     incremento=-1 #por el patron de la matriz, vamos de atrás para adelante.
@@ -45,7 +53,7 @@ def crearMatriz_Diag_4_3_2_1(mat):
         c-=1
         num+=1
 
-def crearMatriz_Diag_Con_Ceros(mat):
+def crearMatriz_Dos_Triangulos(mat):
     # Alternativa 2: Recorremos todas
     # las filas y en cada una colocamos
     # los ceros correspondientes
@@ -140,5 +148,6 @@ n=4
 mat=[[0]*n for i in range(n)]
 imprimirmatriz(mat)
 print()
-crearMatriz_1357(mat)
+crearMatriz_Dos_Triangulos(mat)
+
 imprimirmatriz(mat)
