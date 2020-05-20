@@ -6,21 +6,24 @@
 #b. Sin utilizar rebanadas
 
 #Funciones
-def eliminar_Subcadena_rebanada(cadena, comienzo, cantidad):
-    pocisionfinal=len(cadena)
-    return(cadena[comienzo:comienzo+cantidad])
+def eliminar_Subcadena_rebanada(cadena, comienzo, cantidad):    
+    cadenaaux=cadena[comienzo:comienzo+cantidad]
+    cadenaret=""
+    for c in cadena:
+        if c not in cadenaaux:
+            cadenaret=cadenaret+c
+    return(cadenaret)
 
-def eliinar_Subcadena_sin_rebanada(cadena, comienzo, cantidad):
-    cadaux=""
-    for i in range(0,len(cadena)):
-        if i>=comienzo and i <=comienzo+cantidad:
-            cadaux+=cadena[i]
-    return(cadaux)
+def eliminar_Subcadena_sin_rebanada(cadena, comienzo, cantidad):        
+    cadenaret=""
+    for i in range(len(cadena)):
+        if i<comienzo and i >comienzo+cantidad:
+            cadenaret=cadenaret+cadena[i]                
+    return(cadenaret)
+
+
 
 #Programa Principal
-print(extraer_Subcadena_rebanada("El número de teléfono es 4356-7890",25,9))
-print(extraer_Subcadena_sin_rebanada("El número de teléfono es 4356-7890",25,9))
+print(eliminar_Subcadena_rebanada("El número de teléfono es 4356-7890",3,9))
+print(eliminar_Subcadena_sin_rebanada("El número de teléfono es 4356-7890",3,9))
 
-#Programa Principal
-print(extraer_Subcadena_rebanada("El número de teléfono es 4356-7890",25,9))
-print(extraer_Subcadena_sin_rebanada("El número de teléfono es 4356-7890",25,9))
