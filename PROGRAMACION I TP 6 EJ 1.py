@@ -6,7 +6,7 @@
 
 try:
     archentrada=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3.py",rt)
-    archsalida=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3_sinComentarios.py",rt)
+    archsalida=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3_sinComentarios.py",wt)
     cantlineas=0
     for linea in archentrada:
         linea=linea.rstrip(r"\n#""")
