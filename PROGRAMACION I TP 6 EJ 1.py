@@ -8,11 +8,13 @@ try:
     archentrada=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3.py","rt")
     archsalida=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3_sinComentarios.py","wt")
     cantlineas=0
-    for linea in archentrada:        
-        if linea[0]=="#":
-            linea="\n"
-        archsalida.write(linea)
-        cantlineas+=1
+    for linea in archentrada:
+        linea=linea.lstrip()
+        if len(linea)>0:
+            if linea[0]=="#":
+                linea="\n"
+                archsalida.write(linea)
+            cantlineas+=1
 except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo: ", mensaje)
 except OSError as mensaje:
