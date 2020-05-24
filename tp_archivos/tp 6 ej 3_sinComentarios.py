@@ -1,6 +1,6 @@
-# En los siguientes ejercicios utilice la función del ejercicio I para ingresar datos en una lista y:
-# Determinar Si una lista es capicúa.
-# 4554 45454
+
+
+
 def CrearLista ():
     # para tp de archivos. esta linea tiene que quedar eliminada.
     l = []

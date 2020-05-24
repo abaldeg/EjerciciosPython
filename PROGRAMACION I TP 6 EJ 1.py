@@ -5,19 +5,27 @@
 #C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3.py
 
 try:
-    archentrada=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3.py",rt)
-    archsalida=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3_sinComentarios.py",wt)
+    archentrada=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3.py","rt")
+    archsalida=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\tp 6 ej 3_sinComentarios.py","wt")
     cantlineas=0
-    for linea in archentrada:
-        linea=linea.rstrip(r"\n#""")
+    for linea in archentrada:        
+        if linea[0]=="#":
+            linea="\n"
         archsalida.write(linea)
         cantlineas+=1
-except FileNotFound as mensaje:
+except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo: ", mensaje)
 except OSError as mensaje:
     print("Error: ", mensaje)
 else:
-    print("Copia Finalizada")
+    print("Copia Finalizada. Lineas procesadas: ", cantlineas)
+finally:
+    try:
+        archentrada.close()
+        archsalida.close()
+    except NameError:
+        pass
+        
     
 
     
