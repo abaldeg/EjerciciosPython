@@ -8,6 +8,10 @@ for n in numbers:
     if n%2==0:
         new_list.append(n**2)
 
+#Ejemplo: ["1 Oros",#"2 Oros"... ]. Imprimir la lista por pantalla.
+new_list = [ (n,p) for p in ["Oro", "Copas", "Espada", "Basto"] for n in range (1,13) ]
+print(new_list)
+
 # Print `new_list`
 print(new_list)
 

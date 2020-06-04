@@ -25,7 +25,7 @@ if largo % 2 !=0:
         else:
             capicua=False
         derecha=derecha+1
-else:
+else: #para tp de archivos. esta linea tiene que quedar eliminada.
     print("La cantidad de elementos de la lista debe ser impar")
 
 if capicua==True:
