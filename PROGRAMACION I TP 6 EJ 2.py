@@ -36,12 +36,13 @@ finally:
 
 try:
     archlluvias=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\lluvias.txt","rt")
-    mat=[[0]*cantlineas for i in range(cantlineas)]
-    for f in range(archlluvias):        
-        lstdatos=linea.split(";")
-        mat[lstdatos[0][lstdatos[1]]]
-        cantlluvias+=lstdatos[2]                       
-    
+    m=[]
+    for i in range(31):
+        m.append([0]*13)        
+    for linea in archlluvias:
+        linea=linea.rstrip("\n")
+        linea=linea.split(";")        
+        m[linea[0]][linea[1]] += linea[2]                   
 except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo: ", mensaje)
 except OSError as mensaje:

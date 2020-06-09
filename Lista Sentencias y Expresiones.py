@@ -691,3 +691,166 @@ print(matrix)
 
 #matrix = [item.split() for item in matrix.split('\n')[:]]
 #[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], []]
+
+
+"""Escribir una función que sume todos los elementos de una matriz de M x N y de-
+vuelva el resultado."""
+def summation_recursive(m, i=0, j=0, s=0):
+    if i == len(m) - 1 and j == len(m[i]) - 1:
+        return s
+    elif j == len(m[i]) - 1:
+        return summation_recursive(m, i + 1, 0, s)
+    else:
+        return summation_recursive(m, i, j + 1, s + m[i][j])
+
+"""Leer el archivo generado en el ejemplo anterior e imprimir por pantalla los datos 
+de aquellos alumnos cuyo número de legajo sea menor a 1.000.000. """
+try:
+    arch = open("alumnos.txt","rt")
+    for linea in arch:
+        lu, nombre = linea.split(';')
+        nombre = nombre.rstrip('\n')
+        if print(f"LU: {lu:>7} - Nombre: {nombre)"):
+            print("Archivo leido correctamente.")
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo:", mensaje)
+except OSError as mensaje:
+    print("No se puede leer el archivo:", mensaje) 
+finally:
+    try
+    arch.close( )
+    except NameError:
+        pass
+
+"""Leer un archivo de texto y mostrar la 
+palabra más larga que contenga. 
+Si hay más de una se mostrará cualquiera 
+de ellas. """
+try:
+    arch = open("notas.txt","rt")
+    maslarga = ""
+    for linea in arch:
+        linea = linea.rstrip("\n")
+        listadepalabras = linea.split( )
+        for palabra in listadepalabras:
+            if len(palabra) > len(maslarga):
+                maslarga = palabra
+    print("La palabra más larga es:", maslarga)
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo:", mensaje) 
+except OSError as mensaje:
+    print("No se puede leer el archivo:", mensaje) 
+finally:
+    try:
+        arch.close()
+    except NameError:
+        pass
+
+"""Ejemplo 5 
+Convertir a mayúsculas el contenido del 
+archivo "notas.txt". 
+Como los archivos de texto no se pueden 
+alterar, crearemos una versión 
+modificada llamada "notas2.txt" """
+try:
+    entrada = open("notas.txt","rt")
+    salida = open("notas2.txt","wt")
+    for linea in entrada:
+        salida.write(linea.upper( ))
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo:" , mensaje) 
+except OSError as mensaje:
+    print("ERROR: ", mensaje)
+else:
+    print("Copia finalizada. Líneas copiadas:" , k) 
+finally:
+    try:
+        entrada.close( )
+        salida.close( )
+    except NameError:
+        pass
+    
+"""Recomendaciones 
+No debe leerse ni grabarse por campos; toda lectura o grabación debe afectar al registro completo. 
+Esto se debe a razones de eficiencia.
+Es necesario minimizar* la cantidad de 
+veces que se recorren los archivos. """
+"""Una excepción de tipo SyntaxError (unicode error) se debe a que la ruta del archivo contiene secuencias de 
+escape que no fueron tratadas.
+SyntaxError: (unicode error) 'unicodeescape' codec can 't decode bytes in position 2-3: truncated \UXXXXXXXX escape """
+
+"""Si se produce una excepción de tipo UnicodeDecodeError o si los caracteres 
+regionales aparecen dañados, el archivo f'" creado con codificación UTF8. 
+En estos casos es necesario agregar un parámetro más en la apertura del mismo: 
+arch = open("datos.txt", "rt", """
+
+"""Los archivos de texto generados con odificación UTF8 contienen bytes 
+adicionales al inicio, lo que se conoce como cabecera. 
+Por ese motivo el parámetro  encoding="UTF8" sólo se agregará a la 
+función open() cuando sea estrictamente necesario. """
+
+"""
+Reemplazar las vocales con tilde en 
+una cadena de caracteres por sus 
+equivalentes sin tilde. 
+"""
+vocalescontilde = "áéíóúÀÉiÓÚ" 
+vocalessintilde = "aeiouAElOU" 
+frase = input("lngrese una frase: ") 
+nueva = '"' 
+for caracter in frase: 
+if caracter in vocalescontilde: 
+posicion = vocalescontilde.index(caracter) 
+nueva = nueva + vocalessintilde[posicion]
+else: 
+nueva = nueva + caracter 
+print(nueva)
+
+"""Métodos para cadenas 
+<str>.split([<sep>]): Divide <str> en 
+una lista de cadenas, buscando 
+<sep> como separador. Si <sep> se 
+omite se asumen los espacios.
+"""
+a = "Hola Mundo" 
+b = a.split() # ['Hola', 'Mundo'] 
+c, d = a.split() # 'Hola' y 'Mundo' 
+
+"""
+<sep>.join(<secuencia>): Devuelve 
+una cadena con los elementos de 
+<secuencia> separados por <sep>. 
+<secuencia> puede ser una caden 
+o una lista de cadenas. 
+"""
+cad = ', '.join('abc') 
+print(cad) # a, b, c
+
+
+"""
+Ejemplos del método replace() 
+"""
+a = "Hoy es un día frío, que frío está!" 
+b = a.replace("frío", "húmedo") 
+print(b) # Hoy es un día húmedo, qué húmedo está! 
+c = a.replace("frío", "húmedo", 1) 
+print(c) # Hoyes un día húmedo, qué frío está! 
+
+"""
+<str>.isalpha(): Devuelve True si 
+todos los caracteres de <str> son 
+alfabéticos (letras), o False en caso 
+contrario. Reconoce caracteres 
+regionales."""
+cad = 'Hola' 
+print(cad.isalpha()) # True 
+
+"""
+<str>.isdigit( ): Devuelve True si todos 
+los caracteres de <str> son dígitos 
+numéricos. 
+"""
+cadl = '1234' 
+cad2 = '3.1416' 
+print(cad1.isdigit(), cad2.isdigit()) 
+#True False 
