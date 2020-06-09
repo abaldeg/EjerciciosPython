@@ -42,7 +42,7 @@ try:
     for linea in archlluvias:
         linea=linea.rstrip("\n")
         linea=linea.split(";")        
-        m[linea[0]][linea[1]] += linea[2]                   
+        m[linea[0]][linea[1]] += linea[2] # Importante usa los datos de la linea del archivo para ubicarlos en filas y columnas                    
 except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo: ", mensaje)
 except OSError as mensaje:

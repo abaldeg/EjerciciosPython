@@ -9,7 +9,7 @@ def contarCantDigitos(n,cantdigitos=None):
         return (contarCantDigitos(n,cantdigitos))
     else:
         return(cantdigitos) 
-print(contarCantDigitos())
+print(contarCantDigitos(12))
 
         
         

@@ -7,7 +7,6 @@ def sumarNaturales(n,suma=0):
         suma+=n
         n-=1
         return(sumarNaturales(n,suma))
-
 print(sumarNaturales(3))
 
 

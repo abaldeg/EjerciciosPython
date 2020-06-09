@@ -4,5 +4,5 @@ def convertirBaD(cadena):
     if not cadena:
         return 0
     return convertirBaD(cadena[:-1]) * 2 + (cadena[-1] == '1')
-        
-print(convertirBaD("1010"))
+#convertirBaD(cadena[:-1]) va contando el digito donde esta parado.
+print(convertirBaD("110"))

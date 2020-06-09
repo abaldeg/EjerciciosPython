@@ -4,6 +4,5 @@ def calcularProductos(n,m):
         return(n)
     else:
         return(calcularProductos(n,m-1) + n)
-
 print(calcularProductos(2,8))
     

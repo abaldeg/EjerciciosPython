@@ -853,4 +853,166 @@ numéricos.
 cadl = '1234' 
 cad2 = '3.1416' 
 print(cad1.isdigit(), cad2.isdigit()) 
-#True False 
+#True False
+
+#Desarrollar una función que reciba un número binario y lo devuelva convertido a
+#base decimal.
+def convertirBaD(cadena):
+    if not cadena:
+        return 0
+    return convertirBaD(cadena[:-1]) * 2 + (cadena[-1] == '1')
+#convertirBaD(cadena[:-1]) va contando el digito donde esta parado.
+print(convertirBaD("110"))
+
+#Escribir una función que devuelva la suma de los N primeros números naturales.
+def sumarNaturales(n,suma=0):
+    if n==1:
+        suma+=n
+        return(suma)
+    else:
+        suma+=n
+        n-=1
+        return(sumarNaturales(n,suma))
+print(sumarNaturales(3))
+
+#Escribir una función que devuelva la cantidad de dígitos de un número entero, sin
+#utilizar cadenas de caracteres.
+def contarCantDigitos(n,cantdigitos=None):
+    if cantdigitos is None:
+        cantdigitos=1
+    n=n//10
+    if  n>0:
+        cantdigitos+=1
+        return (contarCantDigitos(n,cantdigitos))
+    else:
+        return(cantdigitos) 
+print(contarCantDigitos(12))
+
+#Desarrollar una función que devuelva el producto de dos números enteros por sumas sucesivas.
+def calcularProductos(n,m):
+    if m==1:
+        return(n)
+    else:
+        return(calcularProductos(n,m-1) + n)
+print(calcularProductos(2,8))
+    
+#
+try:
+    longfija=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\longfija.txt","rt")
+    longfija_a_csv=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\longfija_a_csv.txt","wt")
+    cantlineas=0
+    lineaorig=''
+    lineadest=''       
+    cant=0
+    suma=0
+    prom=0
+    primeralinea=True
+    for lineaorig in longfija:
+        lineadest=lineaorig[0:15]+";"+lineaorig[15:23]+";"+lineaorig[23:63] #+"\n"
+        cantlineas+=1        
+        longfija_a_csv.write(lineadest)
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo: ", mensaje)
+except OSError as mensaje:
+    print("Error: ", mensaje)
+else:
+    print("Archivo procesado. Lineas procesadas: ", cantlineas)
+finally:
+    try:
+        longfija.close()
+        longfija_a_csv.close()
+    except NameError:
+        pass
+
+#
+import random
+
+try:
+    archlluvias=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\lluvias.txt","wt")    
+    cantreg=random.randint(50,200)
+    cont=0
+    cantlineas=0
+    while cont<=cantreg:
+        dia=str(random.randint(1,28))
+        mes=str(random.randint(1,12))
+        mm=str(random.randint(200,1000))
+        linea=dia +';'+ mes +';'+ mm +'\n'                       
+        archlluvias.write(linea)
+        cont+=1
+        cantlineas+=1
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo: ", mensaje)
+except OSError as mensaje:
+    print("Error: ", mensaje)
+else:
+    print("Proceso Finalizado. Lineas procesadas: ", cont)
+finally:
+    try:
+        archlluvias.close()
+    except NameError:
+        pass
+
+try:
+    archlluvias=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\lluvias.txt","rt")
+    m=[]
+    for i in range(31):
+        m.append([0]*13)        
+    for linea in archlluvias:
+        linea=linea.rstrip("\n")
+        linea=linea.split(";")        
+        m[linea[0]][linea[1]] += linea[2]   # Importante usa los datos de la linea del archivo para ubicarlos en filas y columnas                
+except FileNotFoundError as mensaje:
+    print("No se puede abrir el archivo: ", mensaje)
+except OSError as mensaje:
+    print("Error: ", mensaje)
+else:
+    print("Proceso Finalizado. Lineas procesadas: ", cont)
+finally:
+    try:
+        archlluvias.close()
+    except NameError:
+        pass
+
+#
+    try:
+        rangoalturas=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\rangoalturas.txt","rt")
+        promediolturas=open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\promediolturas.txt","wt")
+        cantlineas=0
+        lineaorig=''
+        #lineadest=''
+        cant=0
+        suma=0
+        prom=0
+        primeralinea=True
+        for lineaorig in rangoalturas:
+            cantlineas+=1
+            if not lineaorig.rstrip("\n").isalpha():
+                cant+=1
+                suma+=float(lineaorig.rstrip("\n"))
+                prom=suma/cant
+                #lineadest=''.join(lineaorig) + "\n"
+                #linea=lineaorig
+            elif primeralinea:
+                primeralinea=False
+                promediolturas.write(lineaorig)            
+            else:
+                promediolturas.write(str(prom)+"\n") #Si llegó acá es porque en origen leyó un NUEVO deporte. Así que a imprimir el último cálculo de promedio del deporte anterior
+                promediolturas.write(lineaorig)                                               
+                cant=0
+                suma=0
+        promediolturas.write(str(prom)+"\n")                
+                
+    except FileNotFoundError as mensaje:
+        print("No se puede abrir el archivo: ", mensaje)
+    except OSError as mensaje:
+        print("Error: ", mensaje)
+    else:
+        print("Archivo procesado. Lineas procesadas: ", cantlineas)
+    finally:
+        try:
+            rangoalturas.close()
+            promediolturas.close()  
+        except NameError:
+            pass   
+def MostrarMasAltos():
+    pass
