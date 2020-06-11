@@ -474,7 +474,8 @@ list1 = [1, 2, 3, 0]
 list2 = ['Red', 'Green', 'Black']
 final_list = list1 + list2
 print(final_list)
-#
+
+# imprimir pares de elementos con listas por comprensión
 my_list = ['p', 'q']
 n = 4
 new_list = ['{}{}'.format(x, y) for y in range(1, n+1) for x in my_list]
@@ -579,12 +580,12 @@ for sublist in matrix:
 print(flatten_matrix) #[1, 2, 3, 4, 5, 6, 7, 8, 9]
 #
 # 2-D List. Como aplanar o hacer una lista de una lista de listas con listas por comprensión.
-matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]] 
-  
-# Nested List Comprehension to flatten a given 2-D matrix 
+matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]   
+# Nested List Comprehension to flatten a given 2-D matrix
+# aplanar una matriz
 flatten_matrix = [val for sublist in matrix for val in sublist] 
-  
-print(flatten_matrix) 
+print(flatten_matrix)
+#[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # 2-D List of planets 
 planets = [['Mercury', 'Venus', 'Earth'], ['Mars', 'Jupiter', 'Saturn'], ['Uranus', 'Neptune', 'Pluto']] 
@@ -736,6 +737,78 @@ print(matrix)
 #matrix = [item.split() for item in matrix.split('\n')[:]]
 #[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], []]
 
+#segundo parcial
+try:
+    a = int(input("Dividendo ?"))
+    b = int(input("Divisor ?" ))
+    cociente = a // b
+    resto = a % b
+    print( )
+    print("Cociente:", cociente)
+    print("Resto: ", resto)
+except ZeroDivisionError:
+    print("No se puede dividir por cero.")
+
+"""
+>>> %Run pypart.py
+Dividendo ?10
+Divisor ?5
+
+Cociente: 2
+Resto:  0
+
+>>> %Run pypart.py
+Dividendo ?10
+Divisor ?0
+No se puede dividir por cero.
+"""
+
+#
+try:
+    a = int(input("Dividendo? "))
+    b = int(input("Divisor? "))
+    cociente = a // b
+    resto = a % b
+    print()
+    print("Cociente:", cociente)
+    print("Resto: ", resto)
+except ZeroDivisionError:
+    print("No se puede dividir por cero") 
+except ValueError:
+    print("Sólo se permiten números enteros")
+except:
+    print("Error desconocido. Intente más tarde.")
+
+#
+def leerentero(msj="Ingrese un entero: " ):
+    """ Función para ingresar un número entero """
+    while True:
+        try:
+            n = int(input(msj))
+            break
+        except ValueError:
+            print("Dato inválido.")
+            print("lntente nuevamente.")
+    return n
+
+leerentero()
+"""
+Ingrese un entero: 2.20
+Dato inválido.
+lntente nuevamente.
+Ingrese un entero: a
+Dato inválido.
+lntente nuevamente.
+Ingrese un entero: 2
+"""
+
+#
+
+"""
+Dividendo? 10
+Divisor? 2.90
+Sólo se permiten números enteros
+"""
 
 """Escribir una función que sume todos los elementos de una matriz de M x N y de-
 vuelva el resultado."""
@@ -750,21 +823,35 @@ def summation_recursive(m, i=0, j=0, s=0):
 """Leer el archivo generado en el ejemplo anterior e imprimir por pantalla los datos 
 de aquellos alumnos cuyo número de legajo sea menor a 1.000.000. """
 try:
-    arch = open("alumnos.txt","rt")
+    arch = open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\alumnos.txt","rt")
     for linea in arch:
         lu, nombre = linea.split(';')
         nombre = nombre.rstrip('\n')
-        if print(f"LU: {lu:>7} - Nombre: {nombre)"):
+        if print(f"LU: {lu:>7} - Nombre: {nombre}"):
             print("Archivo leido correctamente.")
 except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo:", mensaje)
 except OSError as mensaje:
     print("No se puede leer el archivo:", mensaje) 
 finally:
-    try
-    arch.close( )
+    try:
+        arch.close( )
     except NameError:
         pass
+""" print(f"LU: {lu:>1}    
+LU: 12 - Nombre: Juan
+LU: 1234567 - Nombre: Juana
+LU: 1234567 - Nombre: Juanito
+LU: 1234567 - Nombre: JuanPablo
+LU: 1234567 - Nombre: JuanAndrÃ©s
+"""
+""" print(f"LU: {lu:>7}
+LU:      12 - Nombre: Juan
+LU: 1234567 - Nombre: Juana
+LU: 1234567 - Nombre: Juanito
+LU: 1234567 - Nombre: JuanPablo
+LU: 1234567 - Nombre: JuanAndrÃ©s
+"""
 
 """Leer un archivo de texto y mostrar la 
 palabra más larga que contenga. 
@@ -797,16 +884,18 @@ Como los archivos de texto no se pueden
 alterar, crearemos una versión 
 modificada llamada "notas2.txt" """
 try:
-    entrada = open("notas.txt","rt")
-    salida = open("notas2.txt","wt")
+    entrada = open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\notas.txt","rt")
+    salida = open(r"C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\tp_archivos\notas2.txt","wt")
+    cantlineas=0
     for linea in entrada:
         salida.write(linea.upper( ))
+        cantlineas+=1
 except FileNotFoundError as mensaje:
     print("No se puede abrir el archivo:" , mensaje) 
 except OSError as mensaje:
     print("ERROR: ", mensaje)
 else:
-    print("Copia finalizada. Líneas copiadas:" , k) 
+    print("Copia finalizada. Líneas copiadas:" , cantlineas) 
 finally:
     try:
         entrada.close( )

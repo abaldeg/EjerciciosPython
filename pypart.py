@@ -1,4 +1,12 @@
-from random import shuffle
-color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
-shuffle(color) #la vimos en clase
-print(color)
+def leerentero(msj="Ingrese un entero: " ):
+    """ Función para ingresar un número entero """
+    while True:
+        try:
+            n = int(input(msj))
+            break
+        except ValueError:
+            print("Dato inválido.")
+            print("lntente nuevamente.")
+    return n
+
+leerentero()
