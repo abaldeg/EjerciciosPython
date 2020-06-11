@@ -1271,9 +1271,7 @@ finally:
             if not lineaorig.rstrip("\n").isalpha():
                 cant+=1
                 suma+=float(lineaorig.rstrip("\n"))
-                prom=suma/cant
-                #lineadest=''.join(lineaorig) + "\n"
-                #linea=lineaorig
+                prom=suma/cant                
             elif primeralinea:
                 primeralinea=False
                 promediolturas.write(lineaorig)            
@@ -1282,8 +1280,7 @@ finally:
                 promediolturas.write(lineaorig)                                               
                 cant=0
                 suma=0
-        promediolturas.write(str(prom)+"\n")                
-                
+        promediolturas.write(str(prom)+"\n")                                
     except FileNotFoundError as mensaje:
         print("No se puede abrir el archivo: ", mensaje)
     except OSError as mensaje:
@@ -1393,6 +1390,29 @@ print(cad) # * 15*
 *   15*
 """
 #
+#Alinear un número a la izquierda: 
+c="*{:<8}*".format(4)
+print(c)
+"""
+*4       *
+"""
+#Alinear una cadena a la derecha: 
+c="*{:>8}*".format("Hola") # * Hola*
+print(c)
+
+#Alinear una cadena a la centrada: 
+c="*{:^8}*".format("Hola") # * Hola*
+print(c)
+
+"""
+*4       *
+*    Hola*
+*  Hola  *
+"""
+#
+a = 15 
+cad = '*{:05}*'.format(a) 
+print(cad) # *00015* 
 #
 print("-" 
 * 40) 
