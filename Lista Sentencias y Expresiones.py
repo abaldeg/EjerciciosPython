@@ -1384,4 +1384,38 @@ if __name__ == '__main__':
 
 #
 cad = ','.join('abc') 
-print(cad) # a, b, c 
+print(cad) # a, b, c
+#
+a = 15 
+cad = '*{:5}*'.format(a) 
+print(cad) # * 15*
+"""
+*   15*
+"""
+#
+#
+print("-" 
+* 40) 
+print("Industrias Alimenticias S.A.".center(40)) 
+print( ) 
+print("Avenida del Campo 279".ljust(20), end="") 
+print( ) 
+numero = 12 
+print("Factura NO", str(numero).zfill(8)) 
+print( ) 
+articulo = "94156 Aceite de oliva premium" 
+print(articulo.lstrip("0123456789 ").ljust(30,"."),end="")
+precio = 416 
+print(str(precio).rjust(10,'.')) 
+print("-" * 40)
+"""
+----------------------------------------
+      lndustrias Alimenticias S.A.      
+
+Avenida del Campo 279
+Factura NO 00000012
+
+Aceite de oliva premium..............416
+----------------------------------------
+"""
+#
