@@ -1,2 +1,4 @@
-#Resto de la division, voy descartando dígitos
-print(105//10) # 1
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color) #la vimos en clase
+print(color)

@@ -216,7 +216,7 @@ for i in range(2,11,2):
 #
 print(1,12,2019,sep="/") #1/12/2019
 print(1,"/",12,"/",2019,sep="") #1/12/2019
-#
+# potencia exponente lambda
 cuadrado=lambda x:x**2
 print (cuadrado(3)) #9
 #
@@ -278,7 +278,7 @@ elif r2 == 0:
     print("El numero, A",a,"NO es multiplo de B",b)
 #
 if (a%4 == 0 and a%100!=0) or (a%400==0):
-    print("el anio",a,"es biciesto")
+    print("el año",a,"es biciesto")
 #
 # En los siguientes ejercicios utilice la función del ejercicio I para ingresar datos en una lista y:
 # Determinar Si una lista es capicúa.
@@ -368,7 +368,7 @@ if not l:
   print("List is empty")
 print(l)
 #
-#Write a Python program to clone or copy a list
+#Write a Python program to clone or copy a list copiar una lista
 original_list = [10, 22, 44, 23, 4]
 new_list = list(original_list)
 new_list2 = original_list
@@ -376,7 +376,7 @@ print(original_list)
 print(new_list)
 print(new_list2)
 #
-#find the list of words that are longer than n from a given list of words
+#find the list of words that are longer than n from a given list of words. palabras de uns lista mayor que N
 def long_words(n, str):
     word_len = []
     txt = str.split(" ")
@@ -388,6 +388,7 @@ print(long_words(3, "The quick brown fox jumps over the lazy dog"))
 #['quick', 'brown', 'jumps', 'over', 'lazy']
 #
 #Write a Python function that takes two lists and returns True if they have at least one common member.
+# Dadas dos lista si al menos tiene un elemento en comun devuelve verdadero.
 def common_data(list1, list2):
      result = False
      for x in list1:
@@ -405,7 +406,17 @@ color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
 color = [x for (i,x) in enumerate(color) if i not in (0,4,5)] #enumerate lo vimos asi que se puede usar en parcial.
 print(color)
 #
+"""Si además del elemento se requiere su subíndice, puede usarse la función enumerate( ). """
+lista = ['a', 'e', 'i', 'o', 'u'] 
+for i, letra in enumerate(lista):
+    print(i, letra) # O a, 1 e, 2 i... 
+
+lista = ['a', 'e', 'i', 'o', 'u'] 
+for i, letra in enumerate(lista):
+    print(i, letra, end=". ") # 0 a. 1 e. 2 i. 3 o. 4 u. 
+#
 #Write a Python program to generate a 3*4*6 3D array whose each element is *
+#Generación de arreglo de n dimensiones con listas por compresión.
 array = [[ ['*' for col in range(6)] for col in range(4)] for row in range(3)]
 array = [[ ['*' for col in range(6)] for col in range(4)] "-" for row in range(3)] #No funca: SyntaxError: invalid syntax
 print(array)
@@ -424,6 +435,19 @@ from random import shuffle
 color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
 shuffle(color) #la vimos en clase
 print(color)
+#
+# Si lo corremos varias veces altera el orden de la lista de elementos
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color) #la vimos en clase
+print(color)
+"""
+['Black', 'Pink', 'White', 'Red', 'Green', 'Yellow']
+>>> %Run pypart.py
+['Yellow', 'White', 'Pink', 'Black', 'Red', 'Green']
+>>> %Run pypart.py
+['Pink', 'Yellow', 'Green', 'Black', 'White', 'Red']
+"""
 #
 #Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers
 #between 1 and 30 (both included).
