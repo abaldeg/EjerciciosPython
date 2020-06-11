@@ -15,9 +15,9 @@ def print_recursive(matrix, i=0, j=0):
 
 if __name__ == '__main__':
     matrix = []
-    row1 = [1, 2, 3, 4]
-    row2 = [7, 8, 9, 10]
-    row3 = [15, 16, 17, 18]
+    row1 = [3, 4, 5, 5]
+    row2 = [97, 98, 99, 11]
+    row3 = [1959, 196, 19, 198]
     matrix.append(row1)
     matrix.append(row2)
     matrix.append(row3)

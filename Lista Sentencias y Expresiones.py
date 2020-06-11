@@ -1,4 +1,5 @@
 #Lista sentencias
+#ctrl+f3 busca en Thonny
 
 # Crear matriz
 m=[]
@@ -42,7 +43,7 @@ print()
 print("Cantidad de digitos %5d" %cantDig, end="")
 print()
 
-#Palabras que cunplan condicion con listas por compresion
+#Palabras que cumplan condicion con listas por compresion
 lstPalabrasN = [x for x in lstPalabras if len(x) >= 6]
 
 #Convertir un string en lista de palabras
@@ -60,9 +61,10 @@ for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
 #
+# Imprimir matrices
 # 1 a n columnas para todas las filas
 print("Lista de Ventas: ", [x[1:cantMeses+1] for x in mat])
-#Generazion de numeros aleatorios no repetidos.
+#Generacion de numeros aleatorios no repetidos.
 numeros=[]
 for f in range(n):
     for c in range(n):
@@ -71,6 +73,7 @@ for f in range(n):
             azar = random.randint(0,cantidad-1)
         mat[f][c] = azar
         numeros.append(azar)
+        
 # Creacion de matriz de ventas con la fila cero para los doce meses y columna cero para productos aleatorios del 1 al 12.
 def crearMatVtas():
     mat=[]
@@ -106,7 +109,7 @@ lstPalabras=frase.split()
 #Lista por compresion con palabras mayores a seis letras.
 lstPalabrasN=[x for x in lstPalabras if len(x)>=6]
 
-# Mismo con funcion lambda
+# Mismo con funcion lambda y filter
 lstPalabrasN=list(filter(lambda x:len(x)>=6,lstPalabras))
 
 #
@@ -139,9 +142,11 @@ a=0
 b=4
 sublista=lista[a:b]
 print(sublista) # [1, 2, 3, 4]
+
 # Generacion aleatoria de tamaño de lista y valores.
 for i in range (random.randint(10,99)):
     listaRandom.append(random.randint(1000,9999))
+    
 # Calculo de año biciesto con lambda (True/False)
 esBisiesto=lambda año: (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0)
 #
@@ -153,21 +158,31 @@ if l1[i] in l2:
     comun=True 
 #
 # Function to demonstrate printing pattern 
-def pypart(n):
+def pypart(n):
     # outer loop to handle number of rows
     # n in this case 
-    for i in range(0, n):
+    for i in range(0,n):
         # inner loop to handle number of columns
         # values changing acc. to outer loop 
-        for j in range(0, i+1):
+        for j in range(0, i+1):
             # printing stars
             print("* ",end="")
-        # ending line after each row
-        print("\r")
-        # Driver Code 
+            # ending line after each row
+            #print("\r")
+            # Driver Code
 n=5
-pypart(n) 
+pypart(n)
+#* * * * * * * * * * * * * * * con   #print("\r")
 #
+"""Métodos para cadenas 
+Ejemplos del método replace( ) """
+a = "Hoy es un día frío, que frío está!" 
+b = a.replace("frío", "húmedo") 
+print(b) # Hoy es un día húmedo, qué húmedo está! 
+c = a.replace("frío", "húmedo", 1) 
+print(c) # Hoy es un día húmedo, qué frío está! 
+#
+# uso de % en print
 precio=5.2
 print("Precio: %5.2f" %precio)
 #
@@ -178,6 +193,11 @@ print(10//3) #3
 print(10/3) #3.3333333333333335
 #Resto de la division
 print(10%3) # 1
+
+#Resto de la division, voy descartando dígitos dividiendo por 10
+print(105//10) # 1
+#10
+
 #
 for i in range(2,11,2):
     print(i, end="") #246810
@@ -1016,3 +1036,90 @@ finally:
             pass   
 def MostrarMasAltos():
     pass
+
+#
+"""La función de Ackermann A(m,n) se define de la siguiente forma:
+                                                n+1 si m = 0
+                                                A(m-1,1) si n = 0
+                                                A(m-1,A(m,n-1)) de otro modo
+Imprimir un cuadro con los valores que adopta la función para valores de m entre
+0 y 3 y de n entre 0 y 7."""
+def a(m,n):
+    if m==0:        
+        return(n+1)
+    elif n==0:
+        return a(m-1,1)
+    else:
+        return(a(m-1,a(m,n-1)))
+print(a(3,7))
+    
+
+ # Por falta de Return!!!! TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+
+
+#
+"""Realizar una función recursiva para imprimir una matriz de M x N."""
+
+def print_recursive(matrix, i=0, j=0):
+    if i < len(matrix):
+        row = matrix[i]
+        if i == len(matrix) and j == len(row):
+            return
+        elif j == len(row):
+            print_recursive(matrix, i + 1)
+        else:
+            print(row[j])
+            print_recursive(matrix, i, j + 1)
+
+
+if __name__ == '__main__':
+    matrix = []
+    row1 = [1, 2, 3, 4]
+    row2 = [7, 8, 9, 10]
+    row3 = [15, 16, 17, 18]
+    matrix.append(row1)
+    matrix.append(row2)
+    matrix.append(row3)
+    print_recursive(matrix)
+    
+    
+#
+"""Escribir una función que sume todos los elementos de una matriz de M x N y de-
+vuelva el resultado."""
+
+
+def summation_recursive(m, i=0, j=0, s=0):
+    if i == len(m) - 1 and j == len(m[i]) - 1:
+        return s
+    elif j == len(m[i]) - 1:
+        return summation_recursive(m, i + 1, 0, s)
+    else:
+        return summation_recursive(m, i, j + 1, s + m[i][j])
+
+#
+def determinarminimo(m, i=0, j=0, min=None):
+    if min is None:
+        min=m[0][0]
+    if i == len(m) - 1 and j == len(m[i]) - 1:
+        return min
+    elif j == len(m[i]) - 1:
+        return determinarminimo(m, i + 1, 0, min)
+    else:
+        if min > m[i][j]:
+            min=m[i][j]            
+        return determinarminimo(m, i, j + 1, min)
+
+
+if __name__ == '__main__':
+    matriz = []
+    row1 = [10, 2, 3, 4]
+    row2 = [7, 8, 9, 10]
+    row3 = [15, 16, 17, 18]
+    matriz.append(row1)
+    matriz.append(row2)
+    matriz.append(row3)
+    print(determinarminimo(matriz))
+
+#
+cad = ','.join('abc') 
+print(cad) # a, b, c 
