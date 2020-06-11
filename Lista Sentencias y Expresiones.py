@@ -801,7 +801,30 @@ Dato inválido.
 lntente nuevamente.
 Ingrese un entero: 2
 """
-
+#
+def leerentero(msj="lngrese un entero: "):
+    while True:
+        try:
+            n = int(input(msj))
+            break
+        except ValueError:
+            print("Dato inválido.")
+            a = input("Desea ingresarlo otra vez? (S/N) ")
+            if a.upper() =='N':
+                raise
+    return n
+leerentero()
+"""
+lngrese un entero: s
+Dato inválido.
+Desea ingresarlo otra vez? (S/N) n
+Traceback (most recent call last):
+  File "C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\pypart.py", line 12, in <module>
+    leerentero()
+  File "C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\pypart.py", line 4, in leerentero
+    n = int(input(msj))
+ValueError: invalid literal for int() with base 10: 's'
+"""
 #
 
 """
@@ -852,7 +875,28 @@ LU: 1234567 - Nombre: Juanito
 LU: 1234567 - Nombre: JuanPablo
 LU: 1234567 - Nombre: JuanAndrÃ©s
 """
-
+#
+def leerentero(msj="Ingrese un entero: "):
+    while True:
+        try:
+            n = int(input(msj))
+        except ValueError:
+            print("Dato inválido.")
+            print("lntente nuevamente.")
+        else:
+            break
+    return n
+leerentero()
+"""
+Ingrese un entero: a
+Dato inválido.
+lntente nuevamente.
+Ingrese un entero: a
+Dato inválido.
+lntente nuevamente.
+Ingrese un entero: 1
+"""
+#
 """Leer un archivo de texto y mostrar la 
 palabra más larga que contenga. 
 Si hay más de una se mostrará cualquiera 
@@ -939,6 +983,86 @@ else:
 nueva = nueva + caracter 
 print(nueva)
 
+#
+def imprimirmatriz(mat):
+    filas = len(mat)
+    columnas= len(mat[0])
+    elementos = filas * columnas
+    f=0
+    c=0
+    for i in range(elementos):
+        try:
+            print("%3d" %mat[f][c], end="")
+        except IndexError:
+            f=f+1
+            print()
+            print("%3d" %mat[f][c], end="")
+        finally:
+            c=c+1
+mat=[[1,2,3],[4,5,6]]
+imprimirmatriz(mat)
+"""
+Traceback (most recent call last):
+  File "C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\pypart.py", line 18, in <module>
+    imprimirmatriz(mat)
+  File "C:\Users\abald\OneDrive\Documentos\GitHub\EjerciciosPython\pypart.py", line 13, in imprimirmatriz
+    print("%3d" %mat[f][c], end="")
+IndexError: list index out of range
+"""
+#
+while True:
+    try:
+        mes = int(input("lngrese el mes: "))
+        assert 1<= mes <=12
+        break
+    except ValueError:
+        print("Sólo se permiten números.")
+    except AssertionError:
+        print("El mes debe estar entre 1 y 12.")
+    print("intente nuevamente.")
+print("mes ingresado es", mes)
+"""
+>>> %Run pypart.py
+lngrese el mes: 1
+mes ingresado es 1
+>>> %Run pypart.py
+lngrese el mes: 23
+El mes debe estar entre 1 y 12.
+intente nuevamente.
+lngrese el mes: 1
+mes ingresado es 1
+"""
+#
+while True:
+    try:
+        n = float(input("lngrese el numero decimal: "))        
+        break
+    except ValueError:
+        print("Sólo se permiten decimales.")    
+    print("intente nuevamente.")
+print("decimal ingresado es", n)
+""">>> %Run pypart.py
+lngrese el numero decimal: 1.10
+decimal ingresado es 1.1
+>>> %Run pypart.py
+lngrese el numero decimal: 1
+decimal ingresado es 1.0
+>>> %Run pypart.py
+lngrese el numero decimal: a
+Sólo se permiten decimales.
+intente nuevamente.
+lngrese el numero decimal: 1
+decimal ingresado es 1.0
+>>> 
+"""
+# Para detectar un número decimal
+n=0.2
+if n==int(n):
+    print('entero')
+else:
+    print("real")
+#
+#
 """Métodos para cadenas 
 <str>.split([<sep>]): Divide <str> en 
 una lista de cadenas, buscando 
@@ -969,6 +1093,31 @@ print(b) # Hoy es un día húmedo, qué húmedo está!
 c = a.replace("frío", "húmedo", 1) 
 print(c) # Hoyes un día húmedo, qué frío está! 
 
+# Centrado con cualquier caracter
+cad1 = 'Hola' 
+cad2 = cad1.center(10,'-') 
+print(cad2) # ---Hola--- 
+# alineados a la derecha o izquiera con cualquier caracter
+cad1 = 'Hola' 
+cad2 = cad1.ljust(10,'-') 
+print(cad2) # Hola--- 
+#
+#
+a = "Continuará..."
+b = a.rstrip('.') # 'Continuará'
+print (b)
+"""
+Continuará
+"""
+#
+# alineado con ceros
+n=3
+cad = str(n).zfill(5) 
+print(cad) # 00003
+"""
+00003
+"""
+#
 """
 <str>.isalpha(): Devuelve True si 
 todos los caracteres de <str> son 
