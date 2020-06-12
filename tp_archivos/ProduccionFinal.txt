@@ -1,0 +1,8 @@
+1;Aire acondicionado;21424
+2;Lavarropas;10
+12;Cafetera;16681
+16;Lavavajillas;21685
+23;Mixer;6853
+31;Cafetera;21685
+4;Pava eléctrica;6853
+3;Lavarropas;10
