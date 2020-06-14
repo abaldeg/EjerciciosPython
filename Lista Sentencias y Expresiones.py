@@ -1439,3 +1439,214 @@ Aceite de oliva premium..............416
 ----------------------------------------
 """
 #
+def VerificaFecha (d,m,a):
+    """Funcion que calcula la fecha Valida"""
+    meses28Dias=[2]
+    meses30Dias=[4,6,9,11]
+    meses31Dias=[1,3,5,7,8,10,12]
+    esBisiesto = lambda año: (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0)
+    
+    if m in meses28Dias:
+        if d <= 28 or (d == 29 and esBisiesto(a)):
+            return True
+        else:
+            return False
+        
+    if m in meses30Dias:
+        if d > 30:
+            return False
+        else:
+            return True
+    
+    if m in meses31Dias:
+        if d > 31:
+            return False
+        else:
+            return True
+    
+    return False
+
+#
+# Práctica 1, Ejercicio 4
+
+def calculargasto(viajes, tarifa):
+    """ Devuelve el importe a pagar segun la cantidad de viajes realizados,
+        considerando el esquema de tarifas decrecientes vigente """
+    tarifa1 = tarifa*0.80  # tarifa con el 20% de descuento
+    tarifa2 = tarifa*0.70  # tarifa con el 30% de descuento
+    tarifa3 = tarifa*0.60  # tarifa con el 40% de descuento
+    if viajes<=0:
+        total=0
+    elif viajes<=20:
+        total = viajes*tarifa
+    elif viajes<=30:
+        total = 20*tarifa+(viajes-20)*tarifa1
+    elif viajes<=40:
+        total = 20*tarifa+10*tarifa1+(viajes-30)*tarifa2
+    else:
+        total = 20*tarifa+10*tarifa1+10*tarifa2+(viajes-40)*tarifa3
+    return total
+
+# Programa principal
+n = int(input("Cantidad de viajes? "))
+p = float(input("Precio del pasaje? "))
+importe = calculargasto(n, p)
+print()
+print("Por", n, "viajes se gastaron $", importe)
+print()
+#
+# Practica 2, ejercicio 1
+
+import random
+
+def cargarlista():
+    cantidad = random.randint(10, 99)   # Número al azar de dos dígitos
+    numeros = [ ]
+    for i in range(cantidad):
+        azar = random.randint(1000, 9999)   # Números al azar de cuatro díigitos
+        numeros.append(azar)
+    return numeros
+
+def calcularsumatoria(numeros):
+    return sum(numeros)
+
+def eliminarvalor(numeros, valor):
+    while valor in numeros:
+        numeros.remove(valor)
+
+def escapicua(numeros):
+    izq = 0
+    der = len(numeros) - 1   # El subindice correspondiente a la longitud NO pertenece a la lista
+    bandera = True   # Asumimos que es capicúa, ahora vamos a verificarlo
+    while izq<der:
+        if numeros[izq]!=numeros[der]:
+            bandera = False   # Encontramos una diferencia, entonces no es capicua
+            break
+        izq = izq + 1
+        der = der - 1
+    return bandera
+
+# Programa principal
+lista = cargarlista()
+print(lista)
+suma = calcularsumatoria(lista)
+print("La suma de los elementos de la lista es de", suma)
+n = int(input("Qué valor desea eliminar? "))
+eliminarvalor(lista, n)
+print(lista)
+if escapicua(lista):
+    print("La lista es capicúa")
+else:
+    print("La lista no es capicúa")
+#
+import random
+def generarLista (listaNumeros):
+    for i in range (50):
+        listaNumeros.append(random.randint(1,100))
+
+def encontrarRepetidos (listaNumeros):
+    estado=False
+    for i in range (len(listaNumeros)):
+        if listaNumeros.count(listaNumeros[i]) > 1:
+            estado=True # PREGUNTA: ESTA BIEN RETORNAR DENTRO DE UN FOR?
+    return estado
+
+def eliminarRepetidos (listaNumeros):
+    listasinRep = []
+    for i in range (len(listaNumeros)):
+        if listasinRep.count(listaNumeros[i]) == 0:
+            # Hay repetidos
+            listasinRep.append(listaNumeros[i])                      
+    
+    return (listasinRep)
+
+def eliminarRepetidosMismaLista(listaNumeros):
+    largo=len(listaNumeros)
+    i=0
+    while i < largo:
+        if listaNumeros.count(listaNumeros[i]) > 1:
+            del listaNumeros[i]
+        i=i+1
+        largo=len(listaNumeros)
+        
+
+# Programa Principal
+listaNumeros=[]
+
+generarLista(listaNumeros)
+print(listaNumeros)
+print()
+listaRepetidos=[1,1,1,2,3,4,4,5,6,77,8,8,9,9,9]
+repetidos=encontrarRepetidos(listaRepetidos)
+if repetidos:
+    print("Se encontraron numeros repetidos")
+else:
+    print("NO se encontraron numeros repetidos")
+print()
+print("NUEVA Lista sin repetidos :",eliminarRepetidos (listaRepetidos))
+print()
+eliminarRepetidosMismaLista(listaRepetidos)
+print("Lista ORIGINAL sin repetidos :",listaRepetidos)
+#
+#Crear una lista con los cuadrados de los números entre 1 y N (ambos incluidos),
+#donde N se ingresa desde el teclado. Luego se solicita imprimir los últimos 10 valores
+#de la lista.
+
+#Funciones
+def crearListaCuadrados(l,n):
+    l=[0]*(n+1)
+    for i in range(1,n+1):
+        l[i]=i**2
+    return (l)
+    
+def imprimirLista(l):
+    l.sort(reverse=True)
+    for i in range(1, 11):
+        print(l[i])    
+
+#Programa Principal
+l=[]
+n=int(input("Ingrese Ultimo valor de la lista: "))
+l=crearListaCuadrados(l,n)
+imprimirLista(l)
+#
+#Definir una función superposición() que reciba como parámetros dos listas de cualquier
+#tipo y devuelva True si tienen al menos un elemento en común, o False en
+#caso contrario. Desarrollar un programa para verificar su comportamiento.
+
+#Funciones
+def superposición(l1,l2):
+    comun=False
+    for i in range(len(l1)):
+        if l1[i] in l2:
+            comun=True            
+    return(comun)
+            
+
+#Programa Principal
+l1=[1,2,3,4,5,6]
+l2=[6,7,8,9,10]
+print(superposición(l1,l2))
+#
+#Escribir un programa que calcule la suma acumulada a partir de una lista de números.
+#El programa debe generar una nueva lista donde el primer elemento es el mismo
+#de la lista original, el segundo elemento es la suma del primero más el segundo,
+#el tercer elemento es la suma del primero más el segundo más el tercero y así
+#sucesivamente. Por ejemplo, la suma acumulada de [1,2,3] es [1,3,6].
+
+#Funciones
+def sumaAcumulada(listaOriginal):    
+    listaAcumulada.append(listaOriginal[0])
+    sumaAcumulada=listaOriginal[0]
+    for i in range(1,len(listaOriginal)):        
+        listaAcumulada.append(listaOriginal[i]+sumaAcumulada)
+        sumaAcumulada=sumaAcumulada+listaOriginal[i]
+    return
+
+#Programa Principal
+listaOriginal=[1,2,3]
+listaAcumulada=[]
+sumaAcumulada(listaOriginal)
+for i in range(len(listaAcumulada)):    
+    print("%3d" %listaAcumulada[i], end="")
+#
