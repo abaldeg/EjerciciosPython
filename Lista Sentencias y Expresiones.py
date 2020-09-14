@@ -60,6 +60,7 @@ matriz = [[0]*(n) for i in range(n)]
 for i in range(n+1):
     matriz[0][i] = i
     matriz[i][0] = i
+print(matriz)
 #
 # Imprimir matrices
 # 1 a n columnas para todas las filas
@@ -216,7 +217,7 @@ print(10/3) #3.3333333333333335
 #Resto de la division
 print(10%3) # 1
 
-#Resto de la division, voy descartando dígitos dividiendo por 10
+#Division entera de la division, voy descartando dígitos dividiendo por 10
 print(105//10) # 1
 #10
 
@@ -425,7 +426,7 @@ print(common_data([1,2,3,4,5], [6,7,8,9]))
 #Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
 #Expected Output : ['Green', 'White', 'Black']
 color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
-color = [x for (i,x) in enumerate(color) if i not in (0,4,5)] #enumerate lo vimos asi que se puede usar en parcial.
+color = [x' '+str(i) for (i,x) in enumerate(color) if i not in (0,4,5)] #enumerate lo vimos asi que se puede usar en parcial.
 print(color)
 #
 """Si además del elemento se requiere su subíndice, puede usarse la función enumerate( ). """
