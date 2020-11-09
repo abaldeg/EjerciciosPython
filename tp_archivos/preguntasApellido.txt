@@ -1,0 +1,8 @@
+1;Los diccionarios en Python poseen índice?;no
+2;El caracter $ se utiliza para comentarios en Python;no
+3;se pueden crear funciones con la instrucción lambda?;si
+4;Python es lenguaje interpretado?;si
+5;random es una función para crear números aleatorios?;si
+6;Las tuplas no se definen entre paréntesis;no
+7;Python no tiene manejo de excepciones;no
+8;Los conjuntos aceptan duplicados;no 

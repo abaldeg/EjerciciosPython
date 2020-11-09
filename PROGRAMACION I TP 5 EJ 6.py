@@ -17,17 +17,18 @@ while n!=-1:
         print("Debe ser un numero entero")
         print()    
 n=0
-contError=1
+contError=0
 while n!=-1:
     try:
-        n=int(input("Ingrese el numero a buscar en la lista: -1 sale: "))                
+        #afirma que contError<3, si no, error!
         assert contError<3, "Se alcanzó el máximo número de errores"
+        n=int(input("Ingrese el numero a buscar en la lista: -1 sale: "))                        
         lista.index(n)        
         print("Numero %3d , encontrado!" %n)
     except ValueError:
         print("Numero %3d, no encontrado!" %n)
         print()
-        contError+=1
+        contError+=1        
     except AssertionError as mensaje:
         print(mensaje)
         break

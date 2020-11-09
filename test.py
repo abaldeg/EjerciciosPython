@@ -1,24 +1,12 @@
-# Simulacro Primer Parcial P1 - Ejercicio 1
-
-while True:
-    n = int(input("Ingrese un número entero impar y mayor o igual a 3: "))
-    if n<3 or n%2==0:
-        print("Número inválido. Intente nuevamente.")
-        continue
-    break
-espaciosizq = n-1
-# Primera fila
-for i in range(espaciosizq):
-    print(" ", end="")
-print("*")
-# laterales
-for i in range(n-2):
-    espaciosizq = espaciosizq - 1
-    for j in range(espaciosizq):
-        print(" ", end="")
-    for j in range(i*2+3):
-        print("*", end="")
-    print( )    
-# Ultima fila
-for i in range(n*2-1):
-    print("*", end="")
+def contarRecursivoDic(matriz, valor, f=0):
+    if f == len(matriz):
+        return 0
+    else:
+        #recorro toda una fila:
+        sumaFila=0
+        for c in range(len(matriz[f])):
+            if matriz[f][c] == valor:
+              sumaFila+=1
+        return sumaFila + contarRecursivo(matriz,valor, f+1) 
+Dic={[1,1],[1,1]}
+print(contarRecursivo(matriz,1))

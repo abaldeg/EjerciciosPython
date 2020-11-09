@@ -1,0 +1,8 @@
+1;La clave de los diccionarios en Python son inmutables?;si
+2;Los valores asociados a cada clave de un diccionario en Python solo pueden ser cadenas;no
+3;Los diccionarios son secuencias;no
+4;Python es lenguaje interpretado?;si
+5;random es una función para crear números aleatorios?;si
+6;Las tuplas no se definen entre paréntesis;no
+7;Python no tiene manejo de excepciones;no
+8;Los conjuntos aceptan duplicados;no

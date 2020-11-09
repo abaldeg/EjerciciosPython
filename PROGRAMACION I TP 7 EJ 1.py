@@ -6,7 +6,7 @@ def contarCantDigitos(n,cantdigitos=None):
     n=n//10
     if  n>0:
         cantdigitos+=1
-        return (contarCantDigitos(n,cantdigitos))
+        return (contarCantDigitos(n,cantdigitos)) #Acá hace último return
     else:
         return(cantdigitos) 
 print(contarCantDigitos(12))

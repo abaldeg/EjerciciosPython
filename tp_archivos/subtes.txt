@@ -1,0 +1,2 @@
+A;San Pedrito;Primera Junta;Acoyte;Rio de Janeiro;Plaza Miserere:H;Congreso;Saenz Peña;Lima:C;Av de Mayo;Peru:D,E;Plaza de Mayo
+B;San Pedrito;Primera Junta;Acoyteb:H;Rio de Janeiro;Plaza Miserereb:H;Congreso;Saenz Peña;Limab:C;Av de Mayo;Perub:D,E;Plaza de Mayo
